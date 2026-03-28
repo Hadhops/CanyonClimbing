@@ -1,10 +1,10 @@
 <?php
 /**
- * Queens functions and definitions
+ * Canyon functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package Queens
+ * @package Canyon
  */
 
 /**
@@ -15,7 +15,7 @@ require get_template_directory() . '/inc/theme-setup.php';
 /**
  * Enqueue scripts and styles.
  */
-function queens_scripts() {
+function canyon_scripts() {
 
 	$themecsspath = get_template_directory() . '/style.css';
 	$style_ver = filemtime( $themecsspath );
@@ -29,7 +29,7 @@ function queens_scripts() {
 	wp_enqueue_style( 'gfont', 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 }
-add_action( 'wp_enqueue_scripts', 'queens_scripts' );
+add_action( 'wp_enqueue_scripts', 'canyon_scripts' );
 
 
 /**

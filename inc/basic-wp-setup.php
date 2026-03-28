@@ -1,8 +1,8 @@
 <?php
 /**
- * Queens Theme Wordpress Setup
+ * Canyon Theme Wordpress Setup
  *
- * @package Queens
+ * @package Canyon
  */
 
 //No Gutenberg

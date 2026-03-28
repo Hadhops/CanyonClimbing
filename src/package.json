@@ -1,7 +1,7 @@
 {
-  "name": "queens",
+  "name": "canyon",
   "version": "1.0.0",
-  "description": "A Blueboat project for Queens",
+  "description": "A Blueboat project for Canyon",
   "browserslist": "> 0.25%, not dead",
   "devDependencies": {
     "@babel/preset-env": "7.20.2",

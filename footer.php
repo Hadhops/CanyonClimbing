@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Queens
+ * @package Canyon
  */
 
 $footerlinks = get_field('footer_links', 'options');
@@ -19,7 +19,7 @@ $footerlinks = get_field('footer_links', 'options');
 		<div class="container">
 			<div class="row">
 				<div class="col-md-3 col-5">
-					<img class="site-footer__logo" src="<?= get_stylesheet_directory_uri(); ?>/static/logos/QueensCollege_Square_BW.svg" alt="Queen's College Logo">
+					<img class="site-footer__logo" src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Square_BW.svg" alt="Queen's College Logo">
 				</div>
 				<div class="col-md-3 col-7">
 					<?php the_field('footer_contact', 'options'); ?>

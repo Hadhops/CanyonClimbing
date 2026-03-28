@@ -247,49 +247,49 @@
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Landscape_CMYK.svg",
+            "name": "static/logos/CanyonCollege_Landscape_CMYK.svg",
             "size": 150330,
             "hash": "e2c9e94b671af1304243497f5c9a7b7b4b7fe39def79a5857dea1100857ccc36"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Landscape_Colour.svg",
+            "name": "static/logos/CanyonCollege_Landscape_Colour.svg",
             "size": 148202,
             "hash": "65c24ea081b2f61f61a97a700f7bca6ddbf37922de42892a215f0356ea62b0f6"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Landscape_Mono.svg",
+            "name": "static/logos/CanyonCollege_Landscape_Mono.svg",
             "size": 123272,
             "hash": "bbe66946114ada50ae12e72efbc0030c15cd51fa06468c4a33639089ca9d6f46"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Landscape_Rev.svg",
+            "name": "static/logos/CanyonCollege_Landscape_Rev.svg",
             "size": 122893,
             "hash": "3174917dd89e933ca97e3c2d1793178c6389fe2019142face072b7794e3f5bab"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Square_BW.svg",
+            "name": "static/logos/CanyonCollege_Square_BW.svg",
             "size": 109983,
             "hash": "19c4b5d849cec4c353bcfac5f26fcb90cc544b583d929e57732a2a3da3246d03"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Square_CMYK.svg",
+            "name": "static/logos/CanyonCollege_Square_CMYK.svg",
             "size": 144933,
             "hash": "4dc56f503cc545d603895ec0cb83d1af918b35c4354d3b9a950de5e7ab25736a"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Square_Mono.svg",
+            "name": "static/logos/CanyonCollege_Square_Mono.svg",
             "size": 111556,
             "hash": "39479485be63d16495e5f5880525213fe3eafbe7c6c81ea64253e8d4e035efdc"
         },
         {
             "type": "file",
-            "name": "static/logos/QueensCollege_Square_Rev.svg",
+            "name": "static/logos/CanyonCollege_Square_Rev.svg",
             "size": 111660,
             "hash": "2bccad79fa6ade3af0d0ace3d3f603bb88e0e85b60dc31962e0f4c1e8b2efcc8"
         },

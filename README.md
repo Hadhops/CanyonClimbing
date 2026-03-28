@@ -3,7 +3,7 @@
 Requires codekit for sass and js processing
 
 ## After Setup
-1. Find and replace 'Queens' and 'queens' to get started
+1. Find and replace 'Canyon' and 'canyon' to get started
 2. run 'npm install' in the src/ directory
 3. Initialise a git repository in this directory to back up your theme code using the following commands (be sure to replace the curly brackets with your git repo url):
 

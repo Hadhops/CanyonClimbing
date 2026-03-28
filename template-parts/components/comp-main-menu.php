@@ -14,7 +14,7 @@ $box_links = array_slice($box_links, 0, 4);
 
       <div class="col-12 text-center">
         <a href="{{ .Site.BaseURL }}" class="main-menu__logo">
-          <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/QueensCollege_Landscape_Colour.svg" alt="Queens Logo" loading="lazy">
+          <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Landscape_Colour.svg" alt="Canyon Logo" loading="lazy">
         </a>
       </div>
       <div class="col-xl-7 col-8">
@@ -56,7 +56,7 @@ $box_links = array_slice($box_links, 0, 4);
         <button data-toggle-main-menu class="main-menu__close"></button>
         <div class="main-menu__inner">
             <img class="main-menu__logo"
-                src="<?= get_stylesheet_directory_uri(); ?>/static/logos/QueensCollege_Square_BW.svg"
+                src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Square_BW.svg"
                 alt="Queen's College Logo">
             <?php
                 wp_nav_menu( array(

@@ -5,7 +5,7 @@ Author: Studio Blueboat
 Author URI: https://blueboat.com.au
 Version: 1.0.0
 License: GNU General Public License v2 or later
-Text Domain: queens
+Text Domain: canyon
 Tags: acf, sass, bootstrap
 
 */
@@ -47,6 +47,7 @@ html{
 }
 
 body{
+  background: red;
   overflow-x: hidden;
   font-family: $font-default;
   color:$colour-font-default;

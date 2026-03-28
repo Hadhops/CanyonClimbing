@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Queens
+ * @package Canyon
  */
 
 //setup header menu subnav
@@ -69,7 +69,7 @@ endif;
                         <a href="#" class="header-nav__apply d-none d-md-block btn btn--inverse btn--no-arr btn--short">Apply now</a>
                         <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"
                             class="header-nav__logo col-md-4 col-6 text-center">
-                            <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/QueensCollege_Landscape_Colour.svg"
+                            <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Landscape_Colour.svg"
                                 alt="Queen's College Logo">
                         </a>
                         <div class="header-nav__right col-md-4 col-6">
