@@ -1,0 +1,66 @@
+.block-icon_grid {
+	&__grid {
+		max-width: 1320px;
+	}
+	&__tile {
+		width: 100%;
+		background: $colour-l-yellow;
+		border: 1px solid $black;
+		position: relative;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		justify-content: flex-end;
+		cursor: pointer;
+		* {
+			pointer-events: none;
+		}
+		@include media-breakpoint-up(sm) {
+			width: 50%;
+			height: 288px;
+		}
+		@include media-breakpoint-up(md) {
+			width: calc(100% / 3);
+		}
+		@include media-breakpoint-up(lg) {
+			width: 25%;
+		}
+		@include media-breakpoint-up(xxl) {
+			width: 20%;
+		}
+		img{
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            margin-left: auto;
+            margin-bottom: 15px;
+        }
+		p {
+			margin: 0;
+		}
+        
+		@include media-breakpoint-up(sm) {
+            transition: background 0.5s ease-in-out;
+            img {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+                margin: 0;
+            }
+			p {
+				max-height: 0px;
+				opacity: 0;
+				overflow: hidden;
+				@include transition(0.5s);
+			}
+			&:hover {
+                background-color: $colour-yellow;
+				p {
+					max-height: 250px;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}

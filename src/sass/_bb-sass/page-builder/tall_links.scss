@@ -1,0 +1,27 @@
+.block-tall_links{
+    position: relative;
+    padding-bottom: calc(var(--section-spacing) * 1.4);
+    &:after{
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        height: calc(100% - (var(--section-spacing) * 1.4));
+        width: 100%;
+        background-color: var(--img-bg);
+        z-index: -1;
+    }
+    .row{
+        position: relative;
+        &:after{
+            position: absolute;
+            content: "";
+            top: -26px;
+            left: -26px;
+            height: calc(100% + 46px);
+            width: calc(100% + 46px);
+            background-color: var(--body-background);
+            z-index: 1;
+        }
+    }
+}

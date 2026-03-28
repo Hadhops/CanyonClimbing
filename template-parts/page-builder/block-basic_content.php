@@ -1,0 +1,32 @@
+<?php 
+//content
+$content = get_sub_field('content');
+$link = get_sub_field('link');
+
+//settings
+$is_full = get_sub_field('is_full_height');
+$is_wide = get_sub_field('is_wide');
+
+//styling classes
+$section_class = 'block-basic';
+if($is_full) $section_class .= ' block-basic--full';
+
+$col_class = $is_wide ? 'col-xl-9 col-md-11' : 'col-lg-7 col-md-9';
+
+?>
+
+<section class="<?= $section_class; ?>">
+    <div class="container">
+        <div class="row justify-content-center align-items-center">
+            <div class="<?= $col_class; ?>">
+                <div class="content-style ">
+                    <?= $content; ?>
+                </div>
+                <?php if($link): ?>
+                <a class="btn mt-5" href="<?= $link['url']; ?>"
+                    target="<?= $link['target'] ? $link['target'] : '_self'; ?>"><?= $link['title']; ?></a>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+</section>

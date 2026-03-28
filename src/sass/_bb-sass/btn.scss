@@ -1,0 +1,77 @@
+.btn{
+    //resets
+    appearance: none;
+    outline: none;
+    border: none;
+    display: inline-block;
+    border-radius: 0;
+    position: relative;
+    text-decoration: none;
+
+    background: $black;
+    color: $colour-yellow;
+    padding: 16px 60px;
+    @include transition(0.2s);
+
+    *{
+        pointer-events: none;
+    }
+
+    &:after{
+        position: relative;
+        display: inline-block;
+        content: "";
+        background: url('./static/arrow-yellow.svg');
+        width: 8px;
+        height: 16px;
+        margin-left: 10px;
+        margin-bottom: -2px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        @include transition(0.2s);
+    }
+
+    &:hover{
+        color: $colour-yellow;
+        &:after{
+            transform: translateX(2px);
+        }
+    }
+
+    &--basic{
+        padding: 0;
+        background: none;
+        color: inherit;
+        &:after{
+            display: none;
+        }
+        &:hover{
+            color: inherit;
+            text-decoration: underline;
+        }
+    }
+
+    &--inverse{
+        background: $colour-yellow;
+        color: $black;
+        &:after{
+            background-image: url('./static/arrow-black.svg');
+        }
+        &:hover{
+            color: $black;
+        }
+    }
+
+    &--short{
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+
+    &--no-arr{
+        &:after{
+            display: none;
+        }
+    }
+
+}

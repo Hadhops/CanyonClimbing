@@ -1,0 +1,566 @@
+/*!
+Theme Name: Queen's College 
+Description: A Custom Wordpress Theme by Studio Blueboat
+Author: Studio Blueboat
+Author URI: https://blueboat.com.au
+Version: 1.0.0
+License: GNU General Public License v2 or later
+Text Domain: queens
+Tags: acf, sass, bootstrap
+
+*/
+
+/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+@import "normalize.css/normalize";
+@import "_bb-sass/bootstrap";
+
+//BB Imports
+@import "_bb-sass/mixins";
+@import "_bb-sass/variables";
+
+
+/*--------------------------------------------------------------
+# Globals & Helpers
+--------------------------------------------------------------*/
+
+:root{
+  --section-spacing: 100px;
+  @include media-breakpoint-down(sm){
+    --section-spacing: 45px;
+  }
+  --body-background: #ffffff;
+  --img-bg: #{$colour-yellow};
+  --img-bg-distance: 20px;
+  --nav-menu-height: 82px;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html{
+  font-size: 16px;
+  line-height: 20px;
+}
+
+body{
+  overflow-x: hidden;
+  font-family: $font-default;
+  color:$colour-font-default;
+  font-size: 1rem;
+  line-height: 1.35rem;
+  &.no-scroll{
+    overflow: hidden;
+  }
+  &.no-scroll-mob{
+    @include media-breakpoint-down(sm){
+      overflow: hidden;
+    }
+  }
+}
+
+.row{
+  --bs-gutter-x: 30px;
+}
+
+#page.site{
+  overflow-x: hidden;
+  background: var(--body-background);
+}
+
+.full-height{
+  min-height: 100vh;
+}
+
+.almost-full-height{
+  min-height: 90vh;
+}
+
+.some-height{
+  min-height: 60vh;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+figure{
+  margin: 0;
+}
+
+iframe{
+  max-width: 100%;
+}
+
+a{
+  color: inherit;
+  text-decoration: none;
+  &:hover{
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.page-content section[class^="block"]{
+  margin: var(--section-spacing) 0;
+}
+
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+
+h1, .h1{
+  font-size: 3.75rem;
+  line-height: 120%;
+  font-weight: 700;
+  @include media-breakpoint-down(sm){
+    font-size: 2.5rem;
+  }
+}
+
+h2, .h2{
+  font-size: 3.125rem;
+  line-height: 120%;
+  font-weight: 700;
+  @include media-breakpoint-down(sm){
+    font-size: 2.3rem;
+  }
+}
+
+h3, .h3{
+  font-size: 2.125rem;
+  line-height: 120%;
+  font-weight: 700;
+  @include media-breakpoint-down(sm){
+    font-size: 1.8rem;
+  }
+}
+
+h4, .h4{
+  font-size: 1.5rem;
+  line-height: 120%;
+  font-weight: 700;
+  @include media-breakpoint-down(sm){
+    font-size: 1.2rem;
+  }
+}
+
+h5, .h5{
+  font-size: 1.25rem;
+  line-height: 130%;
+  font-weight: 700;
+  @include media-breakpoint-down(sm){
+    font-size: 1.2rem;
+  }
+}
+
+h6, .h6{
+  line-height: 130%;
+  font-weight: 700;
+}
+
+.large-body{
+  font-size: 1.5rem;
+  line-height: 130%;
+  @include media-breakpoint-down(sm){
+    font-size: 1.2rem;
+  }
+}
+
+small, .small{
+  font-size: 0.8rem;
+}
+
+.text-yellow{
+  color: $colour-yellow;
+}
+
+hr{
+  opacity: 1;
+  background: $black;
+}
+
+.content-style{
+  &>*{
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+
+  p, ul, figure, img{
+    margin-bottom: 1rem;
+  }
+
+  a{
+    text-decoration: underline;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6{
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  img.alignright { float: right; margin: 0 0 1em 1em; }
+  img.alignleft { float: left; margin: 0 1em 1em 0; }
+  img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
+  .alignright { float: right; }
+  .alignleft { float: left; }
+  .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+}
+
+/*--------------------------------------------------------------
+# Components
+--------------------------------------------------------------*/
+
+.image-bg{
+  position: relative;
+  z-index: 1;
+  &:after{
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: var(--img-bg-distance);
+    left: var(--img-bg-distance);
+    height: 100%;
+    width: 100%;
+    background: var(--img-bg);
+  }
+  &--flip{
+    &:after{
+      left: calc(var(--img-bg-distance) * -1);
+    }
+  }
+}
+
+.news-tile{
+  display: flex;
+  align-items: flex-end;
+  height: 350px;
+  margin: 0 auto;
+  padding: 0 30px 30px 0;
+  background: $colour-yellow;
+  text-decoration: none;
+  color: $black !important;
+  position: relative;
+  *{
+    margin: 0;
+    position: relative;
+    z-index: 3;
+  }
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  &__title{
+    background: $colour-yellow;
+    width: 100%;
+    padding: 17px;
+  }
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 69px;
+    height: 60px;
+    z-index: 2;
+    background: url('./static/cornerstone-yellow.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    transform-origin: top right;
+    @include transition(0.2s);
+  }
+  &:hover{
+    &:after{
+      transform: scale(1.1);
+    }
+  }
+
+  &--publications{
+    --publication-height: 400px;
+
+    height: unset;
+    display: block;
+    padding: 0;
+    background: none;
+
+    &:after{
+      display: none;
+    }
+    
+    &:before{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--publication-height);
+      background: $colour-yellow;
+    }
+
+    img{
+      all: unset;
+      height: var(--publication-height);
+      width: 100%;
+      object-fit: cover;
+      overflow: hidden;
+      display: block;
+      position: relative;
+      @include transition(0.12s);
+    }
+
+    .news-tile__title{
+      padding-left: 0;
+      padding-right: 0;
+      background: none;
+    }
+
+    &:hover{
+      img{
+        transform: translate(15px, -15px);
+      }
+    }
+
+  }
+}
+
+.link-tile{
+  appearance: none;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  text-decoration: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+  margin: 0 15px 30px;
+  padding: 10px;
+  background: var(--img-bg);
+  text-align: center;
+  color: $black !important;
+  position: relative;
+  font-weight: 700;
+  cursor: pointer;
+
+  *{
+    margin: 0;
+    position: relative;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  p{
+    @extend .large-body;
+  }
+
+  img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  &--img{
+    p{
+      color: $white !important;
+      text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5);
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: $black;
+      opacity: 0.2;
+      z-index: 2;
+    }
+  }
+}
+
+.social-icons{
+  p{
+    margin: 0;
+  }
+  a{
+    display: inline-block;
+    text-decoration: none !important;
+    margin-right: 10px;
+    margin-top: 16px;
+    svg{
+      width: 43px;
+      height: 43px;
+      object-fit: contain;
+    }
+  }
+}
+
+@import "_bb-sass/page-header.scss";
+@import "_bb-sass/btn.scss";
+@import "_bb-sass/popover.scss";
+@import "_bb-sass/accordion.scss";
+
+@import "_bb-sass/page-builder/page-builder";
+
+.cornerstone{
+  display: inline-block;
+  position: relative;
+  width: 94px;
+  height: 81px;
+  &:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: url('./static/cornerstone-header.svg');
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: contain;
+    transform-origin: top left;
+    @include transition(0.2s);
+  }
+}
+
+.gradient-bottom{
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 25vh;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  &--yellow{
+    background: rgb(255, 247, 218);
+    background: linear-gradient(0deg, rgba(255, 247, 218,1) 0%, rgba(255, 247, 218,0.8) 50%, rgba(255, 247, 218,0) 100%);
+  }
+  &--black{
+    background: rgb(0, 0, 0);
+    background: linear-gradient(0deg, rgba(0, 0, 0,1) 0%, rgba(0, 0, 0,0.8) 50%, rgba(0, 0, 0,0) 100%);
+  }
+}
+
+
+.tall-link{
+  display: block;
+  height: 300px;
+  width: 100%;
+  color: $white;
+  padding: 25px 10px;
+  overflow: hidden;
+  position: relative;
+  *{
+    position: relative;
+    z-index: 3;
+    margin: 0;
+    @include transition(0.25s);
+  }
+  img{
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  @include media-breakpoint-up(md){
+    height: 80vh;
+    min-height: 400px;
+    max-height: 650px;
+    h2{
+      writing-mode: vertical-rl;
+      margin-left: auto;
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+@import './_bb-sass/navigation.scss';
+
+body.plain-header{
+  .header-nav{
+      background: $colour-yellow;
+      .header-nav__apply{
+          background: $white;
+      }
+  }
+  .cornerstone{
+    &:after{
+      background-image: url('./static/cornerstone-header-w.svg');
+    }
+  }
+}
+
+.navigation.pagination{
+  text-align: center;
+  h2{
+    @extend .h5;
+  }
+}
+
+/*--------------------------------------------------------------
+# Individual Pages
+--------------------------------------------------------------*/
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer{
+  padding: calc(var(--section-spacing) * 0.9) 0 0;
+  background-color: $colour-yellow;
+  &__list{
+    @include list-unstyled;
+    margin-top: calc(var(--section-spacing) * 0.9);
+    li{
+      display: inline-block;
+      margin: 15px;
+    }
+  }
+  &__logo{
+    width: 145px;
+    height: auto;
+  }
+
+  a{
+    text-decoration: none;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+
+}

@@ -1,0 +1,25 @@
+.block-stats{
+
+    &__stats{
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+}
+
+.statistic{
+    text-align: center;
+    *{
+        margin: 0 auto;
+    }
+    h3{
+        font-size: 3rem;
+        line-height: 100%;
+        @include media-breakpoint-up(lg){
+            font-size: 4.625rem;
+        }
+    }
+    p{
+        max-width: 12ch;
+    }
+}

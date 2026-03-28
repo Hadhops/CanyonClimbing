@@ -1,0 +1,8 @@
+.block-two_col{
+
+    &--full{
+        &>.container>.row{
+            min-height: calc(100vh - (var(--section-spacing) * 2));
+        }
+    }
+}

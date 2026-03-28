@@ -1,0 +1,417 @@
+{
+    "description": "DO NOT DELETE THIS FILE. This file is used to keep track of which files have been synced in the most recent deployment. If you delete this file a resync will need to be done (which can take a while) - read more: https://github.com/SamKirkland/FTP-Deploy-Action",
+    "version": "1.0.0",
+    "generatedTime": 1751254309138,
+    "data": [
+        {
+            "type": "file",
+            "name": "404.php",
+            "size": 638,
+            "hash": "a9e6a35b2898d9f74f2b5ca2ae5d74b46d700dfcb994d8ecc18af43a84701fb3"
+        },
+        {
+            "type": "file",
+            "name": "app.js",
+            "size": 90540,
+            "hash": "3fd0d883a56c4a40c31331e4b530233711156ee8e36dd6fececb88aae67a48ef"
+        },
+        {
+            "type": "file",
+            "name": "footer.php",
+            "size": 1350,
+            "hash": "2b1fee14ae77a19f3fc81614f6faaeba49905d45e8758719bfa2ae3668bed4f9"
+        },
+        {
+            "type": "file",
+            "name": "front-page.php",
+            "size": 408,
+            "hash": "b311d09f58e1943697afc1d24378017cb85dbd0f3df1f8133f8c288d72c53543"
+        },
+        {
+            "type": "file",
+            "name": "functions.php",
+            "size": 1792,
+            "hash": "4db3a44d494845c744b62744108a8c24f0db3aa88641b33acaf102a98c135815"
+        },
+        {
+            "type": "file",
+            "name": "header.php",
+            "size": 8100,
+            "hash": "ec811a889aaa9cb50e80e5efd92595aa94920eb532acf22897377b9aa69ea76e"
+        },
+        {
+            "type": "folder",
+            "name": "inc"
+        },
+        {
+            "type": "file",
+            "name": "index.php",
+            "size": 1825,
+            "hash": "6e951b6a738d123fc397366ce42676b9e269967f76b8adec03fc2c45756d9c65"
+        },
+        {
+            "type": "file",
+            "name": "page.php",
+            "size": 736,
+            "hash": "a6f99ec00d3437bc17a48c224e8cff7cbcba9f83fec30b5c3a88a02e0046d877"
+        },
+        {
+            "type": "file",
+            "name": "screenshot.png",
+            "size": 264,
+            "hash": "7e4bc613f200af7487c0da58919280ce263cb66a7bc6b800922bbae6573d8bff"
+        },
+        {
+            "type": "file",
+            "name": "search.php",
+            "size": 1241,
+            "hash": "5a422564cedb73d43c97d0c71973e71f9df46d0b089d5da73c04118d3690b1a9"
+        },
+        {
+            "type": "file",
+            "name": "searchform.php",
+            "size": 550,
+            "hash": "925dad7f58d08a9d89207f408b4f70e512282956ce26a5bb55ae18c748694863"
+        },
+        {
+            "type": "file",
+            "name": "single.php",
+            "size": 533,
+            "hash": "718430308838205ed00ebab47bd99bfb0174d61c4d008ad26694060e439a0c56"
+        },
+        {
+            "type": "folder",
+            "name": "static"
+        },
+        {
+            "type": "file",
+            "name": "style.css",
+            "size": 93696,
+            "hash": "dd851ce33ac383907ea329e51f65b13691749bf802fc9cdc0e4d5d699e359c1c"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts"
+        },
+        {
+            "type": "file",
+            "name": "inc/acf.php",
+            "size": 2316,
+            "hash": "944a062a665aaefc9d4f94adca71e07d5333602f1bb13718d390f703fb3bbae3"
+        },
+        {
+            "type": "file",
+            "name": "inc/basic-wp-setup.php",
+            "size": 4382,
+            "hash": "6fe51aeb8f4636263b9b2f068dc8c6c1018806ec7074ef215aad4c89bdccf680"
+        },
+        {
+            "type": "file",
+            "name": "inc/posts-and-taxonomies.php",
+            "size": 11008,
+            "hash": "be1bd2011dcea0b59c469e737f64fe528b4732803ce3d047354f48b5287f13f8"
+        },
+        {
+            "type": "file",
+            "name": "inc/shortcodes.php",
+            "size": 285,
+            "hash": "0d12caeba4671d589009f9ba9c36187e73aab84e9ad8c23e40e02451a007b4b2"
+        },
+        {
+            "type": "file",
+            "name": "inc/template-functions.php",
+            "size": 918,
+            "hash": "9b010c14195ee4d96b239435a2366c5b88ded237cf68b375d8e031d7c74e9df2"
+        },
+        {
+            "type": "file",
+            "name": "inc/theme-setup.php",
+            "size": 3746,
+            "hash": "9eb217f4277e052623dc9c87abed5e69888e309ed029135ded388781091ae5cf"
+        },
+        {
+            "type": "file",
+            "name": "static/arrow-black.svg",
+            "size": 258,
+            "hash": "f465efe9ebd1869e3f6345825da5284d07884e65c3ca7ca0c96742b059799749"
+        },
+        {
+            "type": "file",
+            "name": "static/arrow-yellow.svg",
+            "size": 255,
+            "hash": "6ae9e7e36b056f72bfa54a1c10d2400cdf50d316c462e2ccf864b40464dd5fdb"
+        },
+        {
+            "type": "file",
+            "name": "static/cornerstone-header-w.svg",
+            "size": 120,
+            "hash": "259da60d0c8c68aa65e13760ab7832c88a4c2835f202fc029e9f7de8c4e9e0d6"
+        },
+        {
+            "type": "file",
+            "name": "static/cornerstone-header.svg",
+            "size": 214,
+            "hash": "4ac8b10d34f8eefb325162f1d8ff33dcc25941fd92d899a503d2b1acc7549ecb"
+        },
+        {
+            "type": "file",
+            "name": "static/cornerstone-yellow.svg",
+            "size": 194,
+            "hash": "caef74622a51eb42b1e92e7f9fa05cf162b8af2920917afb3289630a49152b94"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-close.svg",
+            "size": 237,
+            "hash": "99ee729b6a030fc9381a7dce5816a273afc867f70d2e9a4f5e096891e6ae88cd"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-contact.svg",
+            "size": 1778,
+            "hash": "dd4a0969c81bcc26f6377036ccd119c34a2b2032ee7998fb9d225d6684e252ba"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-donate.svg",
+            "size": 2059,
+            "hash": "c0eb137109851363396a9516e4e597d889f0cd9909706beec96b1f72a416a6f8"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-insta.svg",
+            "size": 2431,
+            "hash": "81863e636bd6622dfd0d42a70374eccf4f4e9867394c7026dd5b2059ff6d61d0"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-fb.svg",
+            "size": 517,
+            "hash": "57affef9112fad91b596c279cfa2dd2f06cf2b8ea025eb99692f70f1b4217b7f"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-li.svg",
+            "size": 767,
+            "hash": "cf72525aef2ff9f1962c794e9bff095a40679423b90ee582a057663959d9f42b"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-menu.svg",
+            "size": 231,
+            "hash": "a4407f89856ab2f218fbaa9651a799a404f3f74cc2b08593d6eca106a1b7b1e2"
+        },
+        {
+            "type": "file",
+            "name": "static/icon-twitter.svg",
+            "size": 895,
+            "hash": "c21afb41b9206795a48d78332bf8019882c18291d829574e010f90b1debca122"
+        },
+        {
+            "type": "folder",
+            "name": "static/logos"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts/components"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/content-none.php",
+            "size": 864,
+            "hash": "b1495f31d7a6ade6f6a6326628e022017b578d795425646ffec2d6d3d13c7723"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/content-search.php",
+            "size": 564,
+            "hash": "3c2a50b76bfe988d40a741cf0309a685cedb054ace8ee9ded5616c372786ad77"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/content.php",
+            "size": 1050,
+            "hash": "2758d2fd1c2167b1a5d5df997faeb245a4c768a231b52ca0bbd18a49d29442b3"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts/page-builder"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts/pages"
+        },
+        {
+            "type": "folder",
+            "name": "template-parts/posts"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Landscape_CMYK.svg",
+            "size": 150330,
+            "hash": "e2c9e94b671af1304243497f5c9a7b7b4b7fe39def79a5857dea1100857ccc36"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Landscape_Colour.svg",
+            "size": 148202,
+            "hash": "65c24ea081b2f61f61a97a700f7bca6ddbf37922de42892a215f0356ea62b0f6"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Landscape_Mono.svg",
+            "size": 123272,
+            "hash": "bbe66946114ada50ae12e72efbc0030c15cd51fa06468c4a33639089ca9d6f46"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Landscape_Rev.svg",
+            "size": 122893,
+            "hash": "3174917dd89e933ca97e3c2d1793178c6389fe2019142face072b7794e3f5bab"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Square_BW.svg",
+            "size": 109983,
+            "hash": "19c4b5d849cec4c353bcfac5f26fcb90cc544b583d929e57732a2a3da3246d03"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Square_CMYK.svg",
+            "size": 144933,
+            "hash": "4dc56f503cc545d603895ec0cb83d1af918b35c4354d3b9a950de5e7ab25736a"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Square_Mono.svg",
+            "size": 111556,
+            "hash": "39479485be63d16495e5f5880525213fe3eafbe7c6c81ea64253e8d4e035efdc"
+        },
+        {
+            "type": "file",
+            "name": "static/logos/QueensCollege_Square_Rev.svg",
+            "size": 111660,
+            "hash": "2bccad79fa6ade3af0d0ace3d3f603bb88e0e85b60dc31962e0f4c1e8b2efcc8"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/components/comp-main-menu.php",
+            "size": 2552,
+            "hash": "33e71f9f8e4b6a4659fd778c5fd21fb0dfeb342e2bfeda401092e05d558ad8bb"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/components/comp-news-tile.php",
+            "size": 906,
+            "hash": "d82f7c8340661601d11e5c87032c5a65d1941677de407258075592ea16ba25dc"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/components/comp-page-header.php",
+            "size": 1909,
+            "hash": "32467f14f187495c18b23962e27952799e73cf8b4a4529f9c013e54a09427ac9"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/components/comp-popover.php",
+            "size": 819,
+            "hash": "fff5691743cbb8e9c865591050c49daf87a35dc18d31c589654967fa30781f5f"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/components/comp-social-icons.php",
+            "size": 790,
+            "hash": "81df4fd4e0cbdb61b5184a1c9e4766860b138891362282d6b2dee7c9457097c2"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-accordion.php",
+            "size": 1239,
+            "hash": "826a56d7b4781abed239a91098ed4481c2ad13066d1e32878b93f2ed96d208dd"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-basic_content.php",
+            "size": 938,
+            "hash": "100649f725beaab584218dfa6c9bbd307e20435fa7afbdcea6de896a07fc54e5"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-icon_grid.php",
+            "size": 931,
+            "hash": "4a56fd82b7701b7a15ede04a1140417c9bb1eaeab964d40f3b019af6ee945060"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-image_background.php",
+            "size": 2425,
+            "hash": "174b788b363db7ab92f7b74c5ffa73fa01e69b8b1940be2393a61a4d046b7185"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-image_background_tabs.php",
+            "size": 3325,
+            "hash": "c9044ccf34ed33a722875e299008ee3654c44d57d9f8db868b17bdd58da3562c"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-list_of_links.php",
+            "size": 3244,
+            "hash": "23aa3655b86e27365f382439a7a267acab6417194c619d1cfd939ef968104425"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-post_list.php",
+            "size": 2023,
+            "hash": "63646762249356b4607ef308e6fcf8232e42000efb2da72ed8330f6c5d70ae56"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-stats.php",
+            "size": 949,
+            "hash": "ef293c6721c8aea3826f1bafb2c5c5ef84a4239ee8c2d8c548c6886c50223ac7"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-tall_links.php",
+            "size": 878,
+            "hash": "9a555b529ce251e4676de731871079cecf7264ed1017003dcc38d7a40e7f931f"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-toggle_background_colour.php",
+            "size": 425,
+            "hash": "89277fec200d1d85c45b4d1f16eb2e9007db271829a1cc4c15d381fc7dcf8bcd"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-two_columns_w_options.php",
+            "size": 2893,
+            "hash": "b804eb8937f2ee15128b110c15ec1b30f0868b75bf735aa61a2d67583110dbb0"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block-video_mask.php",
+            "size": 780,
+            "hash": "ccd720fa78abbc20d1bae8501bd7c0052db3ff7607b459363d8604d4dfabd6c5"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/page-builder/block.php",
+            "size": 28,
+            "hash": "ec08731f4ab026fc3b7204457eeb7de5d5c4abc9739640951463b322ec37be4e"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/pages/page.php",
+            "size": 270,
+            "hash": "de53b7ab0f033e36703bba03dc3908c93c84837408b69d019b3b044e3491daab"
+        },
+        {
+            "type": "file",
+            "name": "template-parts/posts/post.php",
+            "size": 581,
+            "hash": "69b82e12356d9c39dfd228af0c650c12fed79d90df5e404ac12f1176ef6b318f"
+        }
+    ]
+}

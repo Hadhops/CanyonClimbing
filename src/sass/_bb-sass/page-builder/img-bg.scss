@@ -1,0 +1,107 @@
+.block-img-bg{
+    position: relative;
+    padding: var(--section-spacing) 0;
+    margin: 0 !important;
+    z-index: 2;
+    .main-row{
+        min-height: calc(100vh - (var(--section-spacing) * 2));
+    }
+
+    &__content, .block-img-bg-t__content{
+        position: relative;
+        padding: 45px 25px;
+        @include background-opacity($white, 0.6);
+        overflow: hidden;
+    }
+
+    &__bg, .block-img-bg-t__bg{
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: $colour-l-yellow;
+        z-index: -1;
+        img, video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            user-select: none;
+        }
+    }
+
+    &--dark{
+        color: $white;
+        .block-img-bg__content, .block-img-bg-t__content{
+            @include background-opacity($black, 0.3);
+        }
+        .block-img-bg-t__indicator{
+            background-color: $white;
+        }
+    }
+
+}
+
+.block-img-bg-t{
+
+    &__bg{
+        opacity: 0;
+    }
+
+    &__tab{
+        &:not(:first-of-type){
+            display: none;
+        }
+    }
+
+    &__toggles{
+        position: absolute;
+        bottom: 0; 
+        left: 0; 
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+        p{
+            cursor: pointer;
+            padding: 20px 5px;
+            position: relative;
+            &:after{
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: $yellow;
+                display: none;
+                z-index: 2;
+            }
+            &.current:after{
+                display: block;
+            }
+        }
+        .container{
+            position: relative;
+        }
+    }
+
+    &__indicator{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $black;
+    }
+    &__marker{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: $yellow;
+        transform-origin: left;
+        transform: scaleX(0)
+    }
+
+}

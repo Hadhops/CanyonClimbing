@@ -1,0 +1,59 @@
+.accordion{
+    &__heading{
+        padding: 12px 12px 9px;
+        background: $colour-yellow;
+        cursor: pointer;
+        user-select: none;
+        @include transition(0.25s);
+        *{
+            pointer-events: none;
+        }
+        h4{
+            position: relative;
+            display: block;
+            padding-right: 13px;
+            margin: 0;
+            &:before, &:after{
+                content: "";
+                height: 1px;
+                width: 28px;
+                top: 12px;
+                right: 0px;
+                position: absolute;
+                background: $black;
+                @include transition(0.3s);
+            }
+            &:after{
+                transform: rotate(90deg);
+            }
+        }
+        &:hover{
+            background: $colour-l-yellow;
+        }
+    }
+    &__content{
+        max-height: 0px;
+        opacity: 0;
+        overflow: hidden;
+        @include transition(0.55s);
+        .content-style{
+            padding: 20px 0 18px;
+        }
+    }
+    &__row{
+        &:not(:last-of-type){
+            margin-bottom: 24px;
+        }
+        background: $white;
+        &.open{
+            //icon
+            h4:after{
+                transform: rotate(0deg);
+            }
+            .accordion__content{
+                max-height: 6000px;
+                opacity: 1;
+            }
+        }
+    }
+}

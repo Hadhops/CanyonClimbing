@@ -1,0 +1,13 @@
+.block-basic{
+    // &--bottom{
+    //     margin-bottom: calc(var(--section-spacing) * 0.5) !important;
+    // }
+    // &--top{
+    //     margin-top: calc(var(--section-spacing) * 0.5) !important;
+    // }
+    &--full{
+        .row{
+            min-height: calc(100vh - (var(--section-spacing) * 2));
+        }
+    }
+}
