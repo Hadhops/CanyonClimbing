@@ -1,6 +1,6 @@
 $header-padding: 15px;
 .header-nav{
-  background: $white;
+  background: $black;
   padding: $header-padding 0;
   position: fixed;
   top: 0;
@@ -15,7 +15,7 @@ $header-padding: 15px;
     justify-self: center;
     img{
       height: auto;
-      width: 290px;
+      width: 200px;
     }
   }
   &__right{
@@ -28,6 +28,7 @@ $header-padding: 15px;
   }
   &__menu{
     @include list-unstyled;
+    color:$colour-l-yellow;
     margin: 0;
     width: 100%;
     display: flex;

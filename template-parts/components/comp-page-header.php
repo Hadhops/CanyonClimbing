@@ -53,7 +53,6 @@ if($is_centered_header) $section_class .= ' page-header--centered';
 ?>
 
 <section class="<?= $section_class; ?>">
-    <div class="cornerstone"></div>
     <?php if(!$is_small_header): ?>
         <div class="page-header__img">
             <?= $img_html; ?>

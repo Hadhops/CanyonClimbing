@@ -48,25 +48,48 @@ function close_flex_contents() {
 
 add_action('acf/input/admin_head', 'close_flex_contents');
 
-// replace titles on flex content fields
-add_filter('acf/fields/flexible_content/layout_title/name=page_builder', 'my_acf_fields_flexible_content_layout_title', 10, 4);
-function my_acf_fields_flexible_content_layout_title( $title, $field, $layout, $i ) {
 
-    if($layout['name'] == 'basic_content') $title = get_sub_field('content');
-    if($layout['name'] == 'post_list') $title = get_sub_field('title');
-    if($layout['name'] == 'image_background') $title = get_sub_field('title');
-    if($layout['name'] == 'image_background_tabs') $title = count(get_sub_field('tabs')) . ' Image Background Tabs';
-    if($layout['name'] == 'list_of_links') $title = get_sub_field('intro');
-    if($layout['name'] == 'two_columns_w_options') $title = get_sub_field('subtitle');
-    if($layout['name'] == 'video_mask') $title = get_sub_field('mask_text');
-    if($layout['name'] == 'stats') $title = get_sub_field('content');
-    if($layout['name'] == 'icon_grid') $title = get_sub_field('intro');
-    if($layout['name'] == 'accordion') $title = get_sub_field('intro') ?: get_sub_field('accordion')[0]['heading'];
+// dynamically replace titles on all flexible content layouts
+add_filter('acf/fields/flexible_content/layout_title/name=page_builder', 'dynamic_acf_flex_layout_title', 10, 4);
 
-    $title = strip_tags($title);
-    if( strlen($title) >= 45 ) $title = substr($title, 0, 45) . '...';
+function dynamic_acf_flex_layout_title($title, $field, $layout, $i) {
 
-    $title = $layout['label'] . ' - ' . $title;
+    $layout_title = '';
+
+    // loop through subfields and pick the first one with usable content
+    if( isset($layout['sub_fields']) && is_array($layout['sub_fields']) ) {
+        foreach( $layout['sub_fields'] as $subfield ) {
+            $value = get_sub_field($subfield['name']);
+            
+            // if value is string or number, use it
+            if( is_string($value) && $value !== '' ) {
+                $layout_title = $value;
+                break;
+            }
+            
+            // if value is array, try to grab first string inside
+            if( is_array($value) && count($value) > 0 ) {
+                foreach($value as $v) {
+                    if( is_array($v) && isset($v['heading']) ) {
+                        $layout_title = $v['heading'];
+                        break 2; // break both loops
+                    } elseif( is_string($v) && $v !== '' ) {
+                        $layout_title = $v;
+                        break 2;
+                    }
+                }
+            }
+        }
+    }
+
+    // sanitize and truncate safely
+    $layout_title = $layout_title ? strip_tags($layout_title) : '';
+    if( strlen($layout_title) >= 45 ) {
+        $layout_title = substr($layout_title, 0, 45) . '...';
+    }
+
+    // final title
+    $title = $layout['label'] . ($layout_title ? ' - ' . $layout_title : '');
 
     return $title;
 }

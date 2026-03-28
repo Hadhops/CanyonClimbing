@@ -14,7 +14,7 @@ $box_links = array_slice($box_links, 0, 4);
 
       <div class="col-12 text-center">
         <a href="{{ .Site.BaseURL }}" class="main-menu__logo">
-          <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Landscape_Colour.svg" alt="Canyon Logo" loading="lazy">
+          <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/Canyon_Logo_Black.svg" alt="Canyon Logo" loading="lazy">
         </a>
       </div>
       <div class="col-xl-7 col-8">
@@ -34,10 +34,11 @@ $box_links = array_slice($box_links, 0, 4);
       <div class="col-xl-3 col-4 d-flex flex-column justify-content-between">
         <?php
                 wp_nav_menu( array(
-                    'theme_location'    => 'menu-1',
+                    'menu'              => 'menu-1',
+                    'fallback_cb'       => false,
                     'depth'             => 2,
                     'container'         => '',
-                    'menu_id' 			=> 'main-menu',
+                    'menu_id' 			    => 'main-menu',
                     'menu_class'        => 'main-menu__links'
                 ) );
                 ?>
@@ -56,8 +57,8 @@ $box_links = array_slice($box_links, 0, 4);
         <button data-toggle-main-menu class="main-menu__close"></button>
         <div class="main-menu__inner">
             <img class="main-menu__logo"
-                src="<?= get_stylesheet_directory_uri(); ?>/static/logos/CanyonCollege_Square_BW.svg"
-                alt="Queen's College Logo">
+                src="<?= get_stylesheet_directory_uri(); ?>/static/logos/Canyon_Logo_Black.svg"
+                alt="Canyon Logo">
             <?php
                 wp_nav_menu( array(
                     'theme_location'    => 'menu-1',

@@ -8,6 +8,7 @@
 		border: 1px solid $black;
 		position: relative;
 		padding: 20px;
+		margin: 0 1%;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: nowrap;
@@ -17,17 +18,11 @@
 			pointer-events: none;
 		}
 		@include media-breakpoint-up(sm) {
-			width: 50%;
+			width: 48%;
 			height: 288px;
 		}
-		@include media-breakpoint-up(md) {
-			width: calc(100% / 3);
-		}
 		@include media-breakpoint-up(lg) {
-			width: 25%;
-		}
-		@include media-breakpoint-up(xxl) {
-			width: 20%;
+			width: 23%;
 		}
 		img{
             width: 65px;
