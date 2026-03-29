@@ -26,7 +26,7 @@ function canyon_scripts() {
 
 	wp_enqueue_script( 'theme-js', get_template_directory_uri() . '/app.js', false, $js_ver, true );
 
-	wp_enqueue_style( 'gfont', 'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Recursive:wght@300..1000&display=swap');
+	wp_enqueue_style( 'gfont', 'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Recursive:slnt,wght,CASL@-15..0,300..1000,0..1&display=swap');
 
 }
 add_action( 'wp_enqueue_scripts', 'canyon_scripts' );

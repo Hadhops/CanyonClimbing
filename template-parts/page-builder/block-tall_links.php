@@ -17,9 +17,9 @@
             ?>
 
                 <div class="col-lg-4 col-md-6 g-0">
-                    <a href="<?= $link_url ?>" class="tall-link" target="<?= $link_target; ?>">
+                    <a href="<?= $link_url ?>" class="d-flex tall-link" target="<?= $link_target; ?>">
                         <?= $image; ?>
-                        <h2><?= $link_title; ?></h2>
+                        <h2 class="mt-auto"><?= $link_title; ?></h2>
                     </a>
                 </div>
 

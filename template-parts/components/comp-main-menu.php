@@ -13,7 +13,7 @@ $box_links = array_slice($box_links, 0, 4);
       </button>
 
       <div class="col-12 text-center">
-        <a href="{{ .Site.BaseURL }}" class="main-menu__logo">
+        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="main-menu__logo">
           <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/Canyon_Logo_Black.svg" alt="Canyon Logo" loading="lazy">
         </a>
       </div>
@@ -34,7 +34,7 @@ $box_links = array_slice($box_links, 0, 4);
       <div class="col-xl-3 col-4 d-flex flex-column justify-content-between">
         <?php
                 wp_nav_menu( array(
-                    'menu'              => 'menu-1',
+                    'menu'              => 'main-menu',
                     'fallback_cb'       => false,
                     'depth'             => 2,
                     'container'         => '',

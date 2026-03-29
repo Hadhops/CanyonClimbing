@@ -30,7 +30,7 @@ Tags: acf, sass, bootstrap
   @include media-breakpoint-down(sm){
     --section-spacing: 45px;
   }
-  --body-background: #ffffff;
+  --body-background: $colour-l-yellow;
   --img-bg: #{$colour-yellow};
   --img-bg-distance: 20px;
   --nav-menu-height: 82px;
@@ -50,7 +50,9 @@ body{
   overflow-x: hidden;
   font-family: $font-default;
   color:$colour-font-default;
+  background-color: $colour-l-yellow;
   font-size: 1rem;
+  font-weight: 600;
   line-height: 1.35rem;
   &.no-scroll{
     overflow: hidden;
@@ -114,9 +116,15 @@ a{
 --------------------------------------------------------------*/
 
 h1, .h1{
+  font-family: $font-script;
   font-size: 3.75rem;
   line-height: 120%;
   font-weight: 700;
+  font-variation-settings:
+    "slnt" -15,
+    "CASL" 1,
+    "CRSV" 0.5,
+    "MONO" 0;
   @include media-breakpoint-down(sm){
     font-size: 2.5rem;
   }
@@ -206,8 +214,16 @@ hr{
   }
 
   h1, h2, h3, h4, h5, h6{
+    font-family: $font-script;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
+    font-family: $font-script;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" -15,
+        "CASL" 1,
+        "CRSV" 0.5,
+        "MONO" 0;
   }
 
   img.alignright { float: right; margin: 0 0 1em 1em; }
@@ -468,13 +484,15 @@ hr{
   }
 }
 
-
+.block-tall_links{
+  margin-bottom: 0!important;
+}
 .tall-link{
   display: block;
   height: 300px;
   width: 100%;
   color: $white;
-  padding: 25px 10px;
+  padding: 25px;
   overflow: hidden;
   position: relative;
   *{
@@ -497,12 +515,16 @@ hr{
     min-height: 400px;
     max-height: 650px;
     h2{
-      writing-mode: vertical-rl;
-      margin-left: auto;
+      font-family: $font-script;
+      font-weight: 700;
+      font-variation-settings:
+        "slnt" -15,
+        "CASL" 1,
+        "CRSV" 0.5,
+        "MONO" 0;
     }
   }
 }
-
 
 /*--------------------------------------------------------------
 # Navigation
@@ -534,15 +556,18 @@ body.plain-header{
 # Individual Pages
 --------------------------------------------------------------*/
 
-
+.section--html-block{
+  margin: calc(var(--section-spacing) *0)!important;
+}
 
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .site-footer{
-  padding: calc(var(--section-spacing) * 0.9) 0 0;
-  background-color: $colour-yellow;
+  
+  background-color: $black;
+  color: $colour-l-yellow;
   &__list{
     @include list-unstyled;
     margin-top: calc(var(--section-spacing) * 0.9);
