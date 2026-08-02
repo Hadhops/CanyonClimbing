@@ -50,9 +50,10 @@ $header-padding: 15px;
     left: 0;
     z-index: 2;
   }
-  // &__hamburger{
-  //   margin-bottom: 20px;
-  // }
+  &__hamburger img{
+    width: 32px;
+    margin-top: 12px;
+  }
 
   &__icons{
     display: flex;
@@ -72,7 +73,7 @@ $header-padding: 15px;
   }
 
   &.hidden{
-    transform: translateY(-101%);
+    transform: translateY(-101%);   
   }
 
 }
@@ -84,7 +85,7 @@ $header-padding: 15px;
   width: 100%;
   height: 100%;
   padding: 0px;
-  background: $colour-yellow;
+  background: $black;
   z-index: 1000;
   opacity: 0;
   visibility: hidden;
@@ -112,6 +113,7 @@ $header-padding: 15px;
     @include list-unstyled;
     margin: 0;
     padding: 0;
+    height: 60vh;
   }
 
   &__logo{
@@ -125,17 +127,13 @@ $header-padding: 15px;
   }
   
   &__box-links{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 15px;
-    grid-row-gap: 15px;
-    height: 65vh;
-    max-height: 600px;
+    display: block;
     place-items: stretch;
     li{
       position: relative;
       color: $white;
+      height: 38%;
+      margin-bottom: 3%;
       .box-links__content{
         position: relative;
         display: block;
@@ -230,8 +228,8 @@ $header-padding: 15px;
 
     position: absolute;
     z-index: 3;
-    top: 32px;
-    right: 32px;
+    right: 54px;
+    top: 26px;
     height: 30px;
     width: 30px;
     padding: 0;
@@ -248,4 +246,5 @@ $header-padding: 15px;
 .menu-footer{
   font-size: 1.25rem;
   line-height: 1.5rem;
+  color: #fff;
 }

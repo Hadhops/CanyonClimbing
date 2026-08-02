@@ -60,7 +60,9 @@ if($is_full) $section_class .= ' block-two_col--full';
                             $img_classs = $is_flipped_columns ? 'image-bg image-bg--flip' : 'image-bg';
                             echo "<figure class='" . $img_classs . "'>" . wp_get_attachment_image($image, 'full') . "</figure>";
                         endif; ?>
+                        <?php if($corner_element): ?>
                         <img class="corner-element" src="<?php echo esc_url($corner_element['url']); ?>">
+                        <?php endif; ?>
                     </div>
 
                 </div>

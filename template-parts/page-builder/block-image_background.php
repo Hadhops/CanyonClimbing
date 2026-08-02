@@ -2,6 +2,8 @@
 
 $row_index = get_row_index();
 
+$is_not_front_page = ! is_front_page();
+
 //block background image or video
 $image = get_sub_field('image');
 
@@ -41,7 +43,7 @@ $popover_content = get_sub_field('popover_content');
 
     <div class="container">
         <div class="row main-row align-items-center<?php if($is_flipped_columns) echo ' flex-row-reverse'; ?>">
-            <div class="col-md-9 col-lg-6 col-xl-5">
+            <div class="col-md-9 col-lg-<?php if($is_not_front_page) echo '6'; ?>">
                 <div class="block-img-bg__content">
                     <h2 class="block-img-bg__title mb-4"><?php the_sub_field('title'); ?></h2>
                     <?php if($sub_title): ?>

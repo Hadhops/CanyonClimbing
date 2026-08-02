@@ -4,13 +4,12 @@
     outline: none;
     border: none;
     display: inline-block;
-    border-radius: 0;
     position: relative;
     text-decoration: none;
-
+    border-radius: 48px;
     background: $black;
     color: $colour-yellow;
-    padding: 16px 60px;
+    padding: 14px 40px;
     @include transition(0.2s);
 
     *{
@@ -22,7 +21,7 @@
         display: inline-block;
         content: "";
         background: url('./static/arrow-yellow.svg');
-        width: 8px;
+        width: 34px;
         height: 16px;
         margin-left: 10px;
         margin-bottom: -2px;
@@ -35,7 +34,7 @@
     &:hover{
         color: $colour-yellow;
         &:after{
-            transform: translateX(2px);
+            transform: translateX(8px);
         }
     }
 

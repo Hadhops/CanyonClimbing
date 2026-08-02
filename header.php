@@ -81,7 +81,8 @@ endif;
                                 </a>-->
 
                                 <button data-toggle-main-menu class="btn btn--basic header-nav__hamburger">
-                                    <svg fill="none" height="24" viewBox="0 0 37 22" width="37" xmlns="http://www.w3.org/2000/svg"><g stroke="#E3B545" stroke-linecap="round" stroke-width="4"><path d="m1 21h35"/><path d="m1 11h35"/><path d="m1 1 35-.000003"/></g></svg>
+                                    <!--<svg fill="none" height="24" viewBox="0 0 37 22" width="37" xmlns="http://www.w3.org/2000/svg"><g stroke="#E3B545" stroke-linecap="round" stroke-width="4"><path d="m1 21h35"/><path d="m1 11h35"/><path d="m1 1 35-.000003"/></g></svg>-->
+                                    <img src="<?= get_template_directory_uri() . '/static/hamburger.svg'; ?>">
                                 </button>
 
                             </div>
