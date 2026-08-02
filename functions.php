@@ -70,3 +70,45 @@ function redirect_to_acf_file_url() {
 }
 
 add_action( 'template_redirect', 'redirect_to_acf_file_url' );
+
+
+/* YOAST fix homepage title
+ */
+add_filter('wpseo_title', function($title) {
+    if (is_front_page()) {
+        return get_the_title() . ' - ' . get_bloginfo('name');
+    }
+    return $title;
+});
+
+/* Add waiver FAB
+ */
+function waiver_fab_enqueue() {
+    wp_add_inline_style( 'wp-block-library', '
+        
+    ' );
+}
+add_action( 'wp_enqueue_scripts', 'waiver_fab_enqueue' );
+
+function waiver_fab_html() {
+    // ✏️ Change the href below to your waiver page URL
+    echo '
+    <a class="waiver-fab" data-redpoint="lightbox" data-lightboxcolor="#e3b545" data-lightboxurl="https://portal3.climbing-gym.com/lightbox/uptown/agreements/waiver" href="https://portal3.climbing-gym.com/uptown/agreements/waiver" aria-label="Fill out waiver">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <path id="fab-text-circle"
+                    d="M 60,60 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0"/>
+            </defs>
+            <text font-size="20" font-weight="500" fill="black" letter-spacing="3.2">
+                <textPath href="#fab-text-circle" startOffset="0%">
+                    FILL OUT WAIVER • 
+                </textPath>
+            </text>
+            <!-- Pencil icon in the centre -->
+            <text x="60" y="70" text-anchor="middle"
+                  font-size="30" fill="black" font-family="sans-serif">✎</text>
+        </svg>
+    </a>
+    ';
+}
+add_action( 'wp_footer', 'waiver_fab_html' );

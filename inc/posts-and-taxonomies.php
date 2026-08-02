@@ -131,68 +131,6 @@ add_action( 'init', 'events_cat_taxonomy', 0 );
 
 
 
-// Register Custom Post Type Wyverns
-function wyverns_post_type_generate() {
-
-	$labels = array(
-		'name'                  => _x( 'Wyverns', 'Event General Name', 'canyon' ),
-		'singular_name'         => _x( 'Wyvern', 'Event Singular Name', 'canyon' ),
-		'menu_name'             => __( 'Wyverns', 'canyon' ),
-		'name_admin_bar'        => __( 'Wyvern', 'canyon' ),
-		'archives'              => __( 'Item Archives', 'canyon' ),
-		'parent_item_colon'     => __( 'Parent Item:', 'canyon' ),
-		'all_items'             => __( 'All Items', 'canyon' ),
-		'add_new_item'          => __( 'Add New Item', 'canyon' ),
-		'add_new'               => __( 'Add New', 'canyon' ),
-		'new_item'              => __( 'New Item', 'canyon' ),
-		'edit_item'             => __( 'Edit Item', 'canyon' ),
-		'update_item'           => __( 'Update Item', 'canyon' ),
-		'view_item'             => __( 'View Item', 'canyon' ),
-		'search_items'          => __( 'Search Item', 'canyon' ),
-		'not_found'             => __( 'Not found', 'canyon' ),
-		'not_found_in_trash'    => __( 'Not found in Trash', 'canyon' ),
-		'featured_image'        => __( 'Featured Image', 'canyon' ),
-		'set_featured_image'    => __( 'Set featured image', 'canyon' ),
-		'remove_featured_image' => __( 'Remove featured image', 'canyon' ),
-		'use_featured_image'    => __( 'Use as featured image', 'canyon' ),
-		'insert_into_item'      => __( 'Insert into item', 'canyon' ),
-		'uploaded_to_this_item' => __( 'Uploaded to this item', 'canyon' ),
-		'items_list'            => __( 'Items list', 'canyon' ),
-		'items_list_navigation' => __( 'Items list navigation', 'canyon' ),
-		'filter_items_list'     => __( 'Filter items list', 'canyon' ),
-	);
-	$rewrite = array(
-		'slug'                  => 'wyverns',
-		'with_front'            => false,
-		'pages'                 => true,
-		'feeds'                 => true,
-	);
-	$args = array(
-		'label'                 => __( 'Wyvern', 'canyon' ),
-		'description'           => __( 'Wyverns', 'canyon' ),
-		'labels'                => $labels,
-		'supports'              => array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions', ),
-		'hierarchical'          => true,
-		'public'                => true,
-		'show_ui'               => true,
-		'show_in_menu'          => true,
-		'menu_position'         => 20,
-		'menu_icon'             => 'dashicons-businessperson',
-		'show_in_admin_bar'     => true,
-		'show_in_nav_menus'     => true,
-		'can_export'            => true,
-		'has_archive'           => true,
-		'exclude_from_search'   => false,
-		'publicly_queryable'    => true,
-		'rewrite'               => $rewrite,
-		'capability_type'       => 'post',
-	);
-	register_post_type( 'wyverns', $args );
-
-}
-add_action( 'init', 'wyverns_post_type_generate', 0 );
-
-
 // Register Custom Post Type Publications
 function publications_post_type_generate() {
 

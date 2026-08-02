@@ -14,6 +14,7 @@ $is_narrow = get_sub_field('narrow');
 $content_not_image = get_sub_field('image_or_content');
 $is_full = get_sub_field('is_full_height');
 $has_intro_copy = get_sub_field('intro_copy');
+$corner_element = get_sub_field('corner_element');
 
 //has a popover
 $popover_not_button = get_sub_field('link_or_popover');
@@ -29,7 +30,7 @@ if($is_full) $section_class .= ' block-two_col--full';
     <div class="container">
         <div class="row justify-content-center align-items-center">
 
-            <div class="col-12<?php if($is_narrow) echo ' col-xl-10'; ?>">
+            <div class="col-12<?php if($is_narrow) echo ' col-xxl-9'; ?>">
                 <div class="row justify-content-center align-items-center<?php if($is_flipped_columns) echo ' flex-row-reverse'; ?>">
 
                     <?php if($has_intro_copy): ?>
@@ -52,13 +53,14 @@ if($is_full) $section_class .= ' block-two_col--full';
                         <?php endif; ?>
                     </div>
 
-                    <div class="col-md-7">
+                    <div class="col-md-7" style="position:relative;">
                         <?php if($content_not_image):
                             echo "<div class='content-style'>" . $second_content . "</div>";
                         else:
                             $img_classs = $is_flipped_columns ? 'image-bg image-bg--flip' : 'image-bg';
                             echo "<figure class='" . $img_classs . "'>" . wp_get_attachment_image($image, 'full') . "</figure>";
                         endif; ?>
+                        <img class="corner-element" src="<?php echo esc_url($corner_element['url']); ?>">
                     </div>
 
                 </div>

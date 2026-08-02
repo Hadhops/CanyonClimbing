@@ -22,7 +22,7 @@ $socials = array(
 ?>
 
 
-<div class="social-icons">
+<div class="social-icons mt-4">
     <p><strong>Follow us</strong></p>
     <?php foreach ($socials as $social):?>
         <?php if (empty($social['link'])) continue; ?>

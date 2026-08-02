@@ -57,3 +57,8 @@ const clickHandler = (event) => {
 
 }
 document.addEventListener('click', clickHandler, false)
+
+// close menu when navigating back via browser
+window.addEventListener('pageshow', () => {
+  document.querySelector('.main-menu').classList.remove('open')
+})

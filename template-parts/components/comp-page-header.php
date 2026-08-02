@@ -59,18 +59,31 @@ if($is_centered_header) $section_class .= ' page-header--centered';
         </div>
     <?php endif; ?>
 	<div class="container">
+        <?php if ( is_front_page() || is_home() ) { ?>
 		<div class="row align-items-center justify-content-center">
-			<div class="col-12 col-md-4">
-				<h1 <?php if(!$is_small_header) echo 'class="text-black text-center"'; ?> ><?= $title; ?></h1>
+			<div class="col-12 col-md-4 col-l-5">
+				<h1 <?php if(!$is_small_header) echo 'class="text-black"'; ?> ><?= $title; ?></h1>
                 <?php 
                         $subHeading = get_field('sub_heading'); 
-
                         if ($subHeading) {
                             echo '<p class="text-black text-center fs-5">' . $subHeading . '</p>'; 
                         }
                         ?>
 			</div>
 		</div>
+        <?php } else { ?>
+        <div class="row align-items-center">
+			<div class="col-12 col-md-6">
+				<h1 <?php if(!$is_small_header) echo 'class="text-black"'; ?> ><?= $title; ?></h1>
+                <?php 
+                        $subHeading = get_field('sub_heading'); 
+                        if ($subHeading) {
+                            echo '<p class="text-black fs-4 my-4">' . $subHeading . '</p>'; 
+                        }
+                        ?>
+			</div>
+		</div>
+        <?php } ?>
 	</div>
 
 </section>

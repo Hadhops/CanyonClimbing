@@ -28,6 +28,28 @@ export const setupScrollAnimation = () => {
 				autoAlpha: 0,
 				duration: 0.5,
 			});
+		} else if (block.classList.contains("block-pages-grid")) {
+			gsap.from(block.querySelectorAll(".page-grid__item"), {
+				scrollTrigger: {
+					trigger: block,
+					start: "top 80%",
+				},
+				stagger: 0.15,
+				y: 80,
+				autoAlpha: 0,
+				duration: 0.5,
+			});
+		} else if (block.classList.contains("block-stats")) {
+			gsap.from(block.querySelectorAll(".statistic"), {
+				scrollTrigger: {
+					trigger: block,
+					start: "top 80%",
+				},
+				stagger: 0.15,
+				y: 80,
+				autoAlpha: 0,
+				duration: 0.5,
+			});
 		} else if (block.classList.contains("block-list_of_links")) {
 			let tiles = block.querySelectorAll(".link-tile");
 
@@ -124,10 +146,10 @@ export const setupScrollAnimation = () => {
 				scrollTrigger: {
 					trigger: block.querySelector(".image-bg img"),
 					start: "top 90%",
-					end: "bottom 70%",
+					end: "bottom 40%",
 					scrub: 0.3,
 				},
-				"--img-bg-distance": 0,
+				"--img-bg-distance": -40,
 				overwrite: "auto",
 			});
 		} else {

@@ -32,7 +32,7 @@ Tags: acf, sass, bootstrap
   }
   --body-background: $colour-l-yellow;
   --img-bg: #{$colour-yellow};
-  --img-bg-distance: 20px;
+  --img-bg-distance: -80px;
   --nav-menu-height: 82px;
 }
 
@@ -115,6 +115,13 @@ a{
 # Typography
 --------------------------------------------------------------*/
 
+body{
+  @include media-breakpoint-up(xl){
+    font-size: 1.2rem;
+    line-height: 1.75rem;
+  }
+}
+
 h1, .h1{
   font-family: $font-script;
   font-size: 3.75rem;
@@ -171,6 +178,29 @@ h6, .h6{
   font-weight: 700;
 }
 
+.script{ 
+  h2, h3{
+    font-family: $font-script;
+    font-weight: 700;
+    font-variation-settings:
+        "slnt" -15,
+        "CASL" 1,
+        "CRSV" 0.5,
+        "MONO" 0;
+  }
+}
+
+h2 strong, h3 strong, h4 strong{
+    font-family: $font-script;
+    font-weight: 700;
+    font-variation-settings:
+        "slnt" -15,
+        "CASL" 1,
+        "CRSV" 0.5,
+        "MONO" 0;
+  }
+
+
 .large-body{
   font-size: 1.5rem;
   line-height: 130%;
@@ -214,16 +244,8 @@ hr{
   }
 
   h1, h2, h3, h4, h5, h6{
-    font-family: $font-script;
     margin-top: 2rem;
     margin-bottom: 1.5rem;
-    font-family: $font-script;
-      font-weight: 700;
-      font-variation-settings:
-        "slnt" -15,
-        "CASL" 1,
-        "CRSV" 0.5,
-        "MONO" 0;
   }
 
   img.alignright { float: right; margin: 0 0 1em 1em; }
@@ -238,25 +260,20 @@ hr{
 /*--------------------------------------------------------------
 # Components
 --------------------------------------------------------------*/
-
 .image-bg{
   position: relative;
   z-index: 1;
-  &:after{
-    content:"";
-    position: absolute;
-    z-index: -1;
-    top: var(--img-bg-distance);
-    left: var(--img-bg-distance);
-    height: 100%;
-    width: 100%;
-    background: var(--img-bg);
-  }
-  &--flip{
-    &:after{
-      left: calc(var(--img-bg-distance) * -1);
-    }
-  }
+}
+.corner-element {
+  position: absolute;
+  top: var(--img-bg-distance);
+  right: var(--img-bg-distance);
+  z-index: 9999;
+  width: 200px;
+  height: 300px;
+}
+.flex-row-reverse .corner-element {
+  left: var(--img-bg-distance);
 }
 
 .news-tile{
@@ -484,47 +501,7 @@ hr{
   }
 }
 
-.block-tall_links{
-  margin-bottom: 0!important;
-}
-.tall-link{
-  display: block;
-  height: 300px;
-  width: 100%;
-  color: $white;
-  padding: 25px;
-  overflow: hidden;
-  position: relative;
-  *{
-    position: relative;
-    z-index: 3;
-    margin: 0;
-    @include transition(0.25s);
-  }
-  img{
-    position: absolute;
-    z-index: 2;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
-  @include media-breakpoint-up(md){
-    height: 80vh;
-    min-height: 400px;
-    max-height: 650px;
-    h2{
-      font-family: $font-script;
-      font-weight: 700;
-      font-variation-settings:
-        "slnt" -15,
-        "CASL" 1,
-        "CRSV" 0.5,
-        "MONO" 0;
-    }
-  }
-}
+
 
 /*--------------------------------------------------------------
 # Navigation
@@ -568,16 +545,21 @@ body.plain-header{
   
   background-color: $black;
   color: $colour-l-yellow;
+  padding-top: calc(var(--section-spacing) * 0.7);
   &__list{
     @include list-unstyled;
-    margin-top: calc(var(--section-spacing) * 0.9);
     li{
       display: inline-block;
-      margin: 15px;
+      margin-right: 8px;
+      padding-right: 8px;
+      border-right: 1px solid;
+      p{
+        margin-bottom:0;
+      }
     }
   }
   &__logo{
-    width: 145px;
+    width: 210px;
     height: auto;
   }
 
@@ -589,3 +571,41 @@ body.plain-header{
   }
 
 }
+
+
+/*-- Waiver FAB --*/
+
+.waiver-fab {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #e3b545;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+            transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+                        box-shadow 0.25s ease;
+            z-index: 9999;
+        }
+        @keyframes fab-spin {
+        from { transform: scale(1.1) rotate(0deg); }
+        to   { transform: scale(1.1) rotate(-360deg); }
+      }
+        .waiver-fab:hover {
+            animation: fab-spin 4s linear infinite;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+        }
+        .waiver-fab:active {
+            transform: scale(1.08);
+        }
+        .waiver-fab svg {
+            width: 100%;
+            height: 100%;
+        }
+

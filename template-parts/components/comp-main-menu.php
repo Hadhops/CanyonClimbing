@@ -17,6 +17,22 @@ $box_links = array_slice($box_links, 0, 4);
           <img src="<?= get_stylesheet_directory_uri(); ?>/static/logos/Canyon_Logo_Black.svg" alt="Canyon Logo" loading="lazy">
         </a>
       </div>
+      <div class="col-xl-3 col-4 d-flex flex-column justify-content-between">
+        <?php
+                wp_nav_menu( array(
+                    'menu'              => 'main-menu',
+                    'fallback_cb'       => false,
+                    'depth'             => 2,
+                    'container'         => '',
+                    'menu_id' 			    => 'main-menu',
+                    'menu_class'        => 'main-menu__links'
+                ) );
+                ?>
+        <div class="menu-footer">
+          <?php the_field('menu_contact', 'options'); ?>
+        </div>
+      </div>
+
       <div class="col-xl-7 col-8">
         <ul class="main-menu__box-links">
           <?php foreach ($box_links as $box): $id = $box->ID; ?>
@@ -31,22 +47,7 @@ $box_links = array_slice($box_links, 0, 4);
         </ul>
       </div>
 
-      <div class="col-xl-3 col-4 d-flex flex-column justify-content-between">
-        <?php
-                wp_nav_menu( array(
-                    'menu'              => 'main-menu',
-                    'fallback_cb'       => false,
-                    'depth'             => 2,
-                    'container'         => '',
-                    'menu_id' 			    => 'main-menu',
-                    'menu_class'        => 'main-menu__links'
-                ) );
-                ?>
-        <div class="menu-footer">
-          <?php the_field('menu_contact', 'options'); ?>
-          <?php get_template_part('template-parts/components/comp', 'social-icons'); ?>
-        </div>
-      </div>
+      
 
     </div>
   </div>

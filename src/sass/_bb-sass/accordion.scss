@@ -1,21 +1,21 @@
 .accordion{
     &__heading{
         padding: 12px 12px 9px;
-        background: $colour-yellow;
+        background-color: $colour-yellow;
         cursor: pointer;
         user-select: none;
-        @include transition(0.25s);
+        @include transition(0.2s);
         *{
             pointer-events: none;
         }
         h4{
             position: relative;
             display: block;
-            padding-right: 13px;
+            padding-right: 50px;
             margin: 0;
             &:before, &:after{
                 content: "";
-                height: 1px;
+                height: 3px;
                 width: 28px;
                 top: 12px;
                 right: 0px;
@@ -28,7 +28,7 @@
             }
         }
         &:hover{
-            background: $colour-l-yellow;
+            background-color:lighten($colour-yellow, 10%)
         }
     }
     &__content{
@@ -44,7 +44,6 @@
         &:not(:last-of-type){
             margin-bottom: 24px;
         }
-        background: $white;
         &.open{
             //icon
             h4:after{
