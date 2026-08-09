@@ -18,6 +18,7 @@
     transition: ease-in-out 0.175s;
     &:hover{
         transform: rotate(2.5deg);
+        box-shadow: 10px 10px $colour-yellow;
     }
 }
 

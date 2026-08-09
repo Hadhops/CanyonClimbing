@@ -42,7 +42,7 @@ $query = new WP_Query($args);
     <div class="container">
         <div class="row align-items-center justify-content-center">
 
-            <div class="col-12 col-xl-10">
+            <div class="col-12">
                 <div class="row align-items-center justify-content-left">
 
                     <div class="col-12 mb-4">

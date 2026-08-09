@@ -1,3 +1,63 @@
+.page-header{
+    aspect-ratio: 10 / 3.5;
+    margin-top: 34px;
+    position: relative;
+    background-color: $colour-l-yellow;
+    padding: var(--nav-menu-height) 0 calc(var(--nav-menu-height) * 0.15);
+    overflow: hidden;
+    *{
+        z-index: 3;
+        position: relative;
+    }
+    &__img{
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        height:100%;
+        width: 63%;
+        
+        img, video{
+            z-index: 1;
+            width: 100%;
+            object-fit: contain;
+            user-select: none;
+            margin-left: 100px;
+        }
+        img{
+            object-position: top;
+        }
+    }
+    &:after{
+            content: url(../canyon/static/hero-mask2.svg);
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            position: absolute;
+            z-index: 2;
+        }
+    .row, .container{
+        height: 100%;
+    }
+    h1{
+        line-height: 1.1;
+        font-size: clamp(3rem, 6vw, 7rem);
+        text-transform: uppercase;
+        letter-spacing: -2px;
+    }
+
+    &--wide{
+        h1{
+            max-width: 1045px;
+        }
+    }
+    @include media-breakpoint-down(sm){
+        height: initial !important;
+        max-height: initial !important;
+    }
+}
+
 .home .page-header{
     aspect-ratio: 16 / 9;
     margin-top: 34px;
@@ -45,64 +105,7 @@
         line-height: 1.1;
         text-align: center;
         font-size: clamp(3rem, 7vw, 8rem);
-    }
-
-    &--wide{
-        h1{
-            max-width: 1045px;
-        }
-    }
-    @include media-breakpoint-down(sm){
-        height: initial !important;
-        max-height: initial !important;
-    }
-}
-
-.page-header{
-    aspect-ratio: 10 / 3.5;
-    margin-top: 34px;
-    position: relative;
-    background-color: $colour-l-yellow;
-    padding: var(--nav-menu-height) 0 calc(var(--nav-menu-height) * 0.15);
-    overflow: hidden;
-    *{
-        z-index: 3;
-        position: relative;
-    }
-    &__img{
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        right: 0;
-        height:100%;
-        width: 63%;
-        
-        img, video{
-            z-index: 1;
-            width: 100%;
-            object-fit: contain;
-            user-select: none;
-            margin-left: 100px;
-        }
-        img{
-            object-position: top;
-        }
-    }
-    &:after{
-            content: url(../canyon/static/hero-mask2.svg);
-            height: 100%;
-            width: 100%;
-            top: 0;
-            left: 0;
-            position: absolute;
-            z-index: 2;
-        }
-    .row, .container{
-        height: 100%;
-    }
-    h1{
-        line-height: 1.1;
-        font-size: clamp(3rem, 6vw, 7rem);
+        text-transform: initial;
     }
 
     &--wide{

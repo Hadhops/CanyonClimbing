@@ -1,6 +1,7 @@
 <?php 
 
 $row_index = get_row_index();
+$row_id = get_sub_field('row_id');
 
 //content
 $image = get_sub_field('image');
@@ -26,7 +27,7 @@ if($is_full) $section_class .= ' block-two_col--full';
 
 ?>
 
-<section class="<?= $section_class; ?>">
+<section class="<?= $section_class; ?>" id="<?php if($row_id) echo $row_id ?>">
     <div class="container">
         <div class="row justify-content-center align-items-center">
 

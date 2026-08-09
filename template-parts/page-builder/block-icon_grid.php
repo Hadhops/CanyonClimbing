@@ -7,7 +7,7 @@ $intro = get_sub_field('intro');
 <section class="block-icon_grid">
     <?php if($intro): ?>
     <div class="container">
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-left">
             <div class="col-xxl-9 col-md-10 mb-5 content-style">
                 <?= $intro; ?>
             </div>

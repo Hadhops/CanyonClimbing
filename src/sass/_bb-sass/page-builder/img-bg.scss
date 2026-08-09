@@ -43,26 +43,23 @@
 }
 
 
-.home .block-img-bg{
-    .main-row{
-        min-height: calc(100vh - (var(--section-spacing) * 2));
-    }
-
-    &__content, .block-img-bg-t__content{
+#home_video.block-img-bg{
+    padding:0;
+}
+#home_video .block-img-bg__content{
         padding: 0;
         background: inherit;
         overflow: inherit;
     }
-    &__title{
+#home_video .block-img-bg__title{
         font-weight: 700;
         line-height: 114%;
         text-transform: uppercase;
         font-size: 11em;
         color: #f7e6bb;
-        margin-top: -180px;
+        margin-top: 0;
     }
 
-}
 
 
 .block-img-bg-t{

@@ -1,8 +1,8 @@
 /*!
-Theme Name: Canyon 
-Description: A Custom Wordpress Theme by Studio Blueboat
-Author: Studio Blueboat
-Author URI: https://blueboat.com.au
+Theme Name: Canyon
+Description: A Custom Wordpress Theme by Martin Hadley
+Author: Martin Hadley
+Author URI: https://mhd.com
 Version: 1.0.0
 License: GNU General Public License v2 or later
 Text Domain: canyon
@@ -192,12 +192,15 @@ h6, .h6{
 
 h2 strong, h3 strong, h4 strong{
     font-family: $font-script;
-    font-weight: 700;
     font-variation-settings:
         "slnt" -15,
         "CASL" 1,
         "CRSV" 0.5,
         "MONO" 0;
+    font-weight: 800;
+    line-height: 1.15;
+    text-transform: uppercase;
+    letter-spacing: -2px;
   }
 
 

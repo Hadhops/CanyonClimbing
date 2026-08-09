@@ -1,7 +1,7 @@
 <?php 
 
 $row_index = get_row_index();
-
+$row_id = get_sub_field('row_id');
 $is_not_front_page = ! is_front_page();
 
 //block background image or video
@@ -35,7 +35,7 @@ $popover_content = get_sub_field('popover_content');
 
 ?>
 
-<section class="block-img-bg<?php if($is_dark) echo ' block-img-bg--dark'  ?>">
+<section class="block-img-bg<?php if($is_dark) echo ' block-img-bg--dark'  ?>" id="<?php if($row_id) echo $row_id ?>">
 
     <figure class="block-img-bg__bg">
         <?= $img_html; ?>

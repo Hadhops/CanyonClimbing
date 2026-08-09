@@ -66,7 +66,7 @@ if($is_centered_header) $section_class .= ' page-header--centered';
                 <?php 
                         $subHeading = get_field('sub_heading'); 
                         if ($subHeading) {
-                            echo '<p class="text-black text-center fs-5">' . $subHeading . '</p>'; 
+                            echo '<p class="text-black text-center fs-4">' . $subHeading . '</p>'; 
                         }
                         ?>
 			</div>
@@ -78,7 +78,7 @@ if($is_centered_header) $section_class .= ' page-header--centered';
                 <?php 
                         $subHeading = get_field('sub_heading'); 
                         if ($subHeading) {
-                            echo '<p class="text-black fs-4 my-4">' . $subHeading . '</p>'; 
+                            echo '<p class="text-black fs-2 my-4">' . $subHeading . '</p>'; 
                         }
                         ?>
 			</div>
