@@ -8,9 +8,12 @@ $pages = get_sub_field('pages');
         <div class="row align-items-center justify-content-center">
 
             <div class="col-12">
-                <div class="row align-items-center justify-content-center">
-                    <h2 class="page-grid__sectionHeading"><?php echo esc_html($sectionHeading); ?></h2>
-                </div>
+
+                <?php if($sectionHeading): ?>
+                    <div class="row align-items-center justify-content-center">
+                        <h2 class="page-grid__sectionHeading"><?php echo esc_html($sectionHeading); ?></h2>
+                    </div>
+                <?php endif; ?>
 
                 <div class="row align-items-center justify-content-center">
                 <?php if ($pages): ?>
