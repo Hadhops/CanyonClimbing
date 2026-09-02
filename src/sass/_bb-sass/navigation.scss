@@ -62,6 +62,18 @@ $header-padding: 15px;
     &-label{
       text-transform: uppercase;
       line-height: 1;
+      @include transition(0.2s);
+    }
+    // The label cannot be hovered directly: .btn * sets pointer-events:none,
+    // so :hover never matches it. Style it from the button's hover instead.
+    // colour and text-decoration here also undo .btn--basic:hover, which
+    // resolves colour to inherit - black, off body - and adds an underline.
+    &:hover{
+      color: $colour-yellow;
+      text-decoration: none;
+    }
+    &:hover &-label{
+      letter-spacing: 1px;
     }
   }
 
