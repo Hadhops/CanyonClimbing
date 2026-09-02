@@ -4,8 +4,9 @@
 $is_flipped_columns = get_sub_field('flip_columns');
 $is_dark = get_sub_field('colour_scheme');
 
-$first_tab_image = get_sub_field('tabs')[0]['image'];
-$first_tab_image_html = wp_get_attachment_image($first_tab_image, 'full');
+$tabs = get_sub_field('tabs');
+$first_tab_image = is_array($tabs) && isset($tabs[0]['image']) ? $tabs[0]['image'] : null;
+$first_tab_image_html = $first_tab_image ? wp_get_attachment_image($first_tab_image, 'full') : '';
 
 ?>
 

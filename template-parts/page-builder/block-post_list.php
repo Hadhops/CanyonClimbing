@@ -14,23 +14,26 @@ $args = array(
 
 $link = get_post_type_archive_link( $post_type );
 
-if($post_type == 'post' && is_array($category)){
+if($post_type == 'post' && is_array($category) && $category){
     $args['tax_query'] = array( array (
         'taxonomy' => 'category',
         'field' => 'term_id',
         'terms' => $category,
     ));
 
-    $link = get_term_link( $category[0], 'category' );
+    // WP_Error if the term has since been deleted - keep the archive link then
+    $term_link = get_term_link( $category[0], 'category' );
+    if( ! is_wp_error( $term_link ) ) $link = $term_link;
 
-} else if($post_type == 'events' && is_array($event_cat)){ 
+} else if($post_type == 'events' && is_array($event_cat) && $event_cat){ 
     $args['tax_query'] = array( array (
         'taxonomy' => 'events_categories',
         'field' => 'term_id',
         'terms' => $event_cat,
     ));
 
-    $link = get_term_link( $event_cat[0], 'events_categories' );
+    $term_link = get_term_link( $event_cat[0], 'events_categories' );
+    if( ! is_wp_error( $term_link ) ) $link = $term_link;
 }
 
 $query = new WP_Query($args);
@@ -53,9 +56,11 @@ $query = new WP_Query($args);
                     <?php while( $query->have_posts() ) : $query->the_post(); 
                     get_template_part( 'template-parts/components/comp', 'news-tile');
                     endwhile; ?>
+                    <?php if($link): ?>
                     <div class="col-12 text-center text-md-end">
-                        <a href="<?= $link; ?>" class="btn">All</a>
+                        <a href="<?= esc_url( $link ); ?>" class="btn">All</a>
                     </div>
+                    <?php endif; ?>
                 </div>
             </div>
 

@@ -30,10 +30,10 @@ get_header();
 									endwhile;
 
 									$postType = get_queried_object();
-									$name = $postType->name?: $postType->post_name;
+									$name = $postType?->name ?? $postType?->post_name ?? '';
 									the_posts_pagination( array(
 										'mid_size'  => 2,
-										'screen_reader_text' => __( 'More ' . $name , 'textdomain' ),
+										'screen_reader_text' => sprintf( __( 'More %s', 'canyon' ), $name ),
 										'prev_text' => __( '<span><svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.94336 14.9141L9.05664 13.8105L3.14844 7.90234L9.05664 1.99414L7.94336 0.890625L0.931641 7.90234L7.94336 14.9141Z" fill="black"/></svg></span>', 'textdomain' ),
 										'next_text' => __( '<span><svg width="10" height="15" viewBox="0 0 10 15" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.05664 14.9141L0.943359 13.8105L6.85156 7.90234L0.943359 1.99414L2.05664 0.890625L9.06836 7.90234L2.05664 14.9141Z" fill="black"/></svg></span>', 'textdomain' ),
 									) );

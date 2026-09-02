@@ -4,7 +4,8 @@ $intro = get_sub_field('intro');
 
 $parent_row = get_row_index();
 
-$row_count = count(get_sub_field('links'));
+$links = get_sub_field('links');
+$row_count = is_array($links) ? count($links) : 0;
 
 $list_class = '';
 
