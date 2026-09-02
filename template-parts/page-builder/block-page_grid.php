@@ -1,4 +1,5 @@
 <?php
+$sectionHeading = get_sub_field('section_heading');
 $pages = get_sub_field('pages');
 ?>
 
@@ -7,6 +8,10 @@ $pages = get_sub_field('pages');
         <div class="row align-items-center justify-content-center">
 
             <div class="col-12">
+                <div class="row align-items-center justify-content-center">
+                    <h2 class="page-grid__sectionHeading"><?php echo esc_html($sectionHeading); ?></h2>
+                </div>
+
                 <div class="row align-items-center justify-content-center">
                 <?php if ($pages): ?>
                     <div class="page-grid">
