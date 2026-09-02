@@ -7,11 +7,13 @@ $box_links = array_slice($box_links, 0, 4);
 
 ?>
 
-<nav class="main-menu">
+<nav class="main-menu" id="main-menu-panel">
   <div class="container-fluid">
     <div class="row justify-content-around">
-      <button class="main-menu__close" data-toggle-main-menu>
-        <img src="<?= get_template_directory_uri() . '/static/icon-close-colour.svg'; ?>">
+      <button class="main-menu__close" data-toggle-main-menu
+        aria-expanded="false" aria-controls="main-menu-panel">
+        <span class="main-menu__close-label">Close</span>
+        <img src="<?= get_template_directory_uri() . '/static/icon-close-colour.svg'; ?>" alt="">
       </button>
 
       <div class="col-12 text-center">

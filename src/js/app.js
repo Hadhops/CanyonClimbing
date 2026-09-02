@@ -5,12 +5,14 @@ import { togglePopover } from './_app/popover'
 import { setupGsap } from './_app/gsap'
 import { pageSetup, menuHeight } from './_app/page-setup'
 import { toggleImageBackgroundTab } from './_app/components/imageBackgroundTabs'
+import { setMainMenuOpen, isMainMenuOpen, setupMainMenuKeys } from './_app/main-menu'
 
 // run all init scripts
 const loadHandler = () => {
 
   pageSetup()
   setupGsap()
+  setupMainMenuKeys()
 
   document.body.classList.add('loaded')
 
@@ -47,7 +49,7 @@ const clickHandler = (event) => {
   
   //main-menu open/close
   if(matches('[data-toggle-main-menu]')){
-    document.querySelector('.main-menu').classList.toggle('open');
+    setMainMenuOpen(!isMainMenuOpen())
   }
 
   //image background tabs
@@ -60,5 +62,5 @@ document.addEventListener('click', clickHandler, false)
 
 // close menu when navigating back via browser
 window.addEventListener('pageshow', () => {
-  document.querySelector('.main-menu').classList.remove('open')
+  setMainMenuOpen(false)
 })
