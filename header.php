@@ -9,33 +9,6 @@
  * @package Canyon
  */
 
-//setup header menu subnav
-function recursive_get_parent_menu($page_id){
-    $parent = wp_get_post_parent_id( $page_id );
-
-    if(!$parent) return false;
-
-    if(get_field('header_menu', $parent)):
-        return get_field('header_menu', $parent);
-    else:
-        recursive_get_parent_menu($parent);
-    endif;
-}
-
-
-$default_header_menu = get_field('header_menu', 'options');
-
-$header_menu = $default_header_menu;
-
-$closest_parent_menu = recursive_get_parent_menu(get_the_ID());
-
-if(get_field('header_menu')):
-    $header_menu = get_field('header_menu');
-elseif($closest_parent_menu):
-    $header_menu = $closest_parent_menu;
-endif;
-
-
 //use alt header
 $body_classes = '';
 
@@ -88,16 +61,6 @@ endif;
                                 </button>
 
                             </div>
-                            <!--<ul class="header-nav__menu">
-                                <?php foreach($header_menu as $row):
-                                $link = $row['link'];
-                                        $link_url = $link['url'];
-                                        $link_title = $link['title'];
-                                        $link_target = $link['target'] ? $link['target'] : '_self';
-                                ?>
-                                <li><a href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a></li>
-                                <?php endforeach; ?>
-                            </ul>-->
                         </div>
                     </div>
                 </div>
