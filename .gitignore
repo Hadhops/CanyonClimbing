@@ -2,3 +2,6 @@ node_modules/
 .DS_Store
 .env
 src/gsap-bonus.tgz
+.ftp-deploy-sync-state.json
+logs/
+/package-lock.json
