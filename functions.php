@@ -28,6 +28,18 @@ function canyon_scripts() {
 
 	wp_enqueue_style( 'gfont', 'https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Recursive:slnt,wght,CASL@-15..0,300..1000,0..1&display=swap');
 
+	// Climbing gym portal embed, which powers the waiver lightbox. Deferred:
+	// it only registers delegated listeners on window and reads data-redpoint
+	// at click time, so it never needs to run while the page is parsing.
+	// null version so no ?ver= is appended to a third party URL.
+	wp_enqueue_script(
+		'redpoint-embed',
+		'https://portal3.climbing-gym.com/js/embed.js',
+		array(),
+		null,
+		array( 'strategy' => 'defer', 'in_footer' => false )
+	);
+
 }
 add_action( 'wp_enqueue_scripts', 'canyon_scripts' );
 
