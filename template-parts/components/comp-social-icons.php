@@ -8,14 +8,6 @@ $socials = array(
     array(
         'img' => 'insta',
         'link' => get_field('instagram_link', 'options')
-    ),
-    array(
-        'img' => 'li',
-        'link' => get_field('linkedin_link', 'options')
-    ),
-    array(
-        'img' => 'twitter',
-        'link' => get_field('twitter_link', 'options')
     )
 );
 

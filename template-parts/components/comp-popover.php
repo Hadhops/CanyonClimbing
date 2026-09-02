@@ -17,7 +17,7 @@ extract($args);
     <div class="popover__inner">
         <div class="popover__header">
             <button data-popover-target="<?= $id; ?>" class="btn btn--basic">
-                <img src="<?= get_template_directory_uri() . '/static/icon-close.svg'; ?>">
+                <img src="<?= get_template_directory_uri() . '/static/icon-close-black.svg'; ?>">
             </button>
         </div>
         <div class="popover__content">

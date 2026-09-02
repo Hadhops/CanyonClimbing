@@ -30,7 +30,7 @@ Tags: acf, sass, bootstrap
   @include media-breakpoint-down(sm){
     --section-spacing: 45px;
   }
-  --body-background: $colour-l-yellow;
+  --body-background: #{$colour-l-yellow};
   --img-bg: #{$colour-yellow};
   --img-bg-distance: -80px;
   --nav-menu-height: 82px;

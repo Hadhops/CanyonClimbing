@@ -1,6 +1,8 @@
 <?php 
 
-$box_links = wp_get_nav_menu_items( 6 );
+// Feature tiles for the menu, from the "Four Squares" nav menu.
+// Resolved by slug not term ID so it survives a database import.
+$box_links = wp_get_nav_menu_items( 'four-squares' ) ?: array();
 $box_links = array_slice($box_links, 0, 4);
 
 ?>
