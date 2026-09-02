@@ -46,13 +46,27 @@
         }
     }
     &__content{
-        max-height: 0px;
+        // 0fr -> 1fr animates the panel's real height, so the collapse is
+        // visible for its whole duration. max-height needed a number larger
+        // than any possible panel (6000px), which meant ~97% of the travel
+        // was dead and the panel only moved in the last few frames.
+        display: grid;
+        grid-template-rows: 0fr;
         opacity: 0;
-        overflow: hidden;
         // without this, links in a collapsed panel stay tabbable and are read
         // out by screen readers
         visibility: hidden;
-        @include transition(0.55s);
+        // matches the icon, so the two finish together
+        transition: grid-template-rows 0.3s ease-in-out,
+                    opacity 0.3s ease-in-out,
+                    visibility 0.3s ease-in-out;
+        // the grid item has to be able to shrink to nothing. padding is not
+        // subject to min-height, so it lives on the element inside instead -
+        // otherwise the row floors at 38px and never fully closes
+        &-inner{
+            min-height: 0;
+            overflow: hidden;
+        }
         .content-style{
             padding: 20px 0 18px;
         }
@@ -67,7 +81,7 @@
                 transform: rotate(0deg);
             }
             .accordion__content{
-                max-height: 6000px;
+                grid-template-rows: 1fr;
                 opacity: 1;
                 visibility: visible;
             }

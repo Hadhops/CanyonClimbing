@@ -35,7 +35,9 @@ $parent_row = get_row_index();
                             </h4>
                             <div class="accordion__content" id="<?= $panel_id; ?>" role="region"
                                 aria-labelledby="<?= $toggle_id; ?>">
-                                <div class="content-style"><?= $content; ?></div>
+                                <div class="accordion__content-inner">
+                                    <div class="content-style"><?= $content; ?></div>
+                                </div>
                             </div>
                         </div>
 
