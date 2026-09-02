@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(php -l *)",
+      "Bash(npx gulp build)",
+      "Bash(npx gulp build *)",
+      "Bash(npx gulp styles)",
+      "Bash(npx gulp styles *)"
+    ]
+  }
+}
