@@ -41,9 +41,10 @@ const clickHandler = (event) => {
   }
 
   //accordion
-  if(matches('.accordion__heading')){
-    let row = event.target.parentNode
-    row.classList.toggle('open')
+  if(matches('.accordion__toggle')){
+    const toggle = event.target
+    const isOpen = toggle.closest('.accordion__row').classList.toggle('open')
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
     setTimeout(function() {ScrollTrigger.refresh(true)}, 500)
   }
   

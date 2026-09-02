@@ -22,11 +22,19 @@ $parent_row = get_row_index();
 
                         <?php  while( have_rows('accordion') ) : the_row();
                             $heading = get_sub_field('heading');
-                            $content = get_sub_field('content'); ?>
+                            $content = get_sub_field('content');
+
+                            // $parent_row keeps these unique across several accordions on one page
+                            $panel_id  = 'accordion-' . $parent_row . '-' . get_row_index();
+                            $toggle_id = $panel_id . '-toggle'; ?>
 
                         <div class="accordion__row">
-                            <div class="accordion__heading"><h4><?= $heading ?></h4></div>
-                            <div class="accordion__content">
+                            <h4 class="accordion__heading">
+                                <button type="button" class="accordion__toggle" id="<?= $toggle_id; ?>"
+                                    aria-expanded="false" aria-controls="<?= $panel_id; ?>"><?= $heading ?></button>
+                            </h4>
+                            <div class="accordion__content" id="<?= $panel_id; ?>" role="region"
+                                aria-labelledby="<?= $toggle_id; ?>">
                                 <div class="content-style"><?= $content; ?></div>
                             </div>
                         </div>

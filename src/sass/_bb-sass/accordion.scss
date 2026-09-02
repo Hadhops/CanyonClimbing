@@ -1,40 +1,57 @@
 .accordion{
+    // the heading element itself is just the outline slot - the button is the bar
     &__heading{
-        padding: 12px 12px 9px;
+        margin: 0;
+    }
+    &__toggle{
+        //resets
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        font: inherit;
+        color: inherit;
+        text-align: left;
+
+        position: relative;
+        display: block;
+        width: 100%;
+        // 62px right = the old 12px bar padding + 50px h4 padding, so the text
+        // still clears the icon
+        padding: 12px 62px 9px 12px;
         background-color: $colour-yellow;
         cursor: pointer;
         user-select: none;
         @include transition(0.2s);
-        *{
-            pointer-events: none;
+
+        &:before, &:after{
+            content: "";
+            height: 3px;
+            width: 28px;
+            // 24px = the bar's 12px top padding + the icon's old 12px offset
+            top: 24px;
+            right: 12px;
+            position: absolute;
+            background: $black;
+            @include transition(0.3s);
         }
-        h4{
-            position: relative;
-            display: block;
-            padding-right: 50px;
-            margin: 0;
-            &:before, &:after{
-                content: "";
-                height: 3px;
-                width: 28px;
-                top: 12px;
-                right: 0px;
-                position: absolute;
-                background: $black;
-                @include transition(0.3s);
-            }
-            &:after{
-                transform: rotate(90deg);
-            }
+        &:after{
+            transform: rotate(90deg);
         }
         &:hover{
             background-color:lighten($colour-yellow, 10%)
+        }
+        &:focus-visible{
+            outline: 3px solid $black;
+            outline-offset: -3px;
         }
     }
     &__content{
         max-height: 0px;
         opacity: 0;
         overflow: hidden;
+        // without this, links in a collapsed panel stay tabbable and are read
+        // out by screen readers
+        visibility: hidden;
         @include transition(0.55s);
         .content-style{
             padding: 20px 0 18px;
@@ -46,12 +63,13 @@
         }
         &.open{
             //icon
-            h4:after{
+            .accordion__toggle:after{
                 transform: rotate(0deg);
             }
             .accordion__content{
                 max-height: 6000px;
                 opacity: 1;
+                visibility: visible;
             }
         }
     }
