@@ -27,7 +27,7 @@ if($is_full) $section_class .= ' block-two_col--full';
 
 ?>
 
-<section class="<?= $section_class; ?>" id="<?php if($row_id) echo $row_id ?>">
+<section class="<?= $section_class; ?>"<?php if($row_id) echo ' id="' . esc_attr($row_id) . '"'; ?>>
     <div class="container">
         <div class="row justify-content-center align-items-center">
 

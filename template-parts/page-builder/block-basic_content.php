@@ -18,7 +18,7 @@ $col_class = $is_wide ? 'col-xl-9 col-md-11' : 'col-lg-7 col-md-9';
 
 ?>
 
-<section class="<?= $section_class . ' ' . $class; ?>" id="<?= $row_id ?>">
+<section class="<?= $section_class . ' ' . $class; ?>"<?php if($row_id) echo ' id="' . esc_attr($row_id) . '"'; ?>>
     <div class="container">
         <div class="row justify-content-left align-items-center">
             <div class="<?= $col_class; ?>">

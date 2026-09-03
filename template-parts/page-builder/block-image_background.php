@@ -35,7 +35,7 @@ $popover_content = get_sub_field('popover_content');
 
 ?>
 
-<section class="block-img-bg<?php if($is_dark) echo ' block-img-bg--dark'  ?>" id="<?php if($row_id) echo $row_id ?>">
+<section class="block-img-bg<?php if($is_dark) echo ' block-img-bg--dark'  ?>"<?php if($row_id) echo ' id="' . esc_attr($row_id) . '"'; ?>>
 
     <figure class="block-img-bg__bg">
         <?= $img_html; ?>
