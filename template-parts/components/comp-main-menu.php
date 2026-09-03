@@ -7,7 +7,7 @@ $box_links = array_slice($box_links, 0, 4);
 
 ?>
 
-<nav class="main-menu" id="main-menu-panel">
+<nav class="main-menu" id="main-menu-panel" aria-label="<?php esc_attr_e( 'Main', 'canyon' ); ?>">
   <div class="container-fluid">
     <div class="row justify-content-around">
       <button class="main-menu__close" data-toggle-main-menu

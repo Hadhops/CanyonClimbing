@@ -37,7 +37,7 @@ endif;
     <div id="page" class="site">
         <header id="masthead" class="site-header">
 
-            <nav class="header-nav" role="navigation">
+            <nav class="header-nav" aria-label="<?php esc_attr_e( 'Header', 'canyon' ); ?>">
                 <div class="container">
                     <div class="justify-content-end align-items-center flex-row d-flex position-relative">
                         <a href="#" class="header-nav__apply d-none d-md-block btn--inverse btn--no-arr btn--short">MEMBER LOGIN</a>
