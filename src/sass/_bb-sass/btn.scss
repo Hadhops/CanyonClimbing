@@ -10,10 +10,40 @@
     background: $black;
     color: $colour-yellow;
     padding: 14px 40px;
+    // Declared so the hover has a start value to animate from. top/left
+    // default to auto and box-shadow to none, and neither auto -> -8px nor
+    // none -> a shadow is interpolatable, so the lift snapped instantly while
+    // the shadow appeared on its own. Zero offset keeps the shadow hidden
+    // behind the button at rest.
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 0 $colour-yellow;
     @include transition(0.2s);
 
     *{
         pointer-events: none;
+    }
+
+    // Invisible hit area that holds still while the button lifts. The insets
+    // mirror on hover so it covers the same screen rectangle in both states -
+    // the union of the resting and lifted positions, which also covers where
+    // the shadow lands. Without it the button slides out from under the
+    // cursor, hover drops, it falls back, and it oscillates.
+    // Excluded from --basic: that variant does not lift, and its :before is
+    // already used by the popover footer arrows.
+    &:not(.btn--basic):before{
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        right: 0;
+        bottom: 0;
+    }
+    &:not(.btn--basic):hover:before{
+        top: 0;
+        left: 0;
+        right: -8px;
+        bottom: -8px;
     }
 
     &:after{
@@ -33,6 +63,14 @@
 
     &:hover{
         color: $colour-yellow;
+        // Lifts with top/left rather than transform on purpose: GSAP writes an
+        // inline transform onto buttons inside .block-img-bg__content, and an
+        // inline style would silently win over a transform set here. .btn is
+        // already position:relative, so top/left shifts it without reflowing
+        // anything around it.
+        top: -8px;
+        left: -8px;
+        box-shadow: 8px 8px 0 $colour-yellow;
         &:after{
             transform: translateX(8px);
         }
@@ -42,23 +80,34 @@
         padding: 0;
         background: none;
         color: inherit;
+        // transparent background, so even a zero-offset shadow would show
+        box-shadow: none;
         &:after{
             display: none;
         }
+        // no lift or shadow here - this variant has no background and no
+        // padding, so a solid pill shadow would read as a stray block behind
+        // the hamburger and popover close icons
         &:hover{
             color: inherit;
             text-decoration: underline;
+            top: 0;
+            left: 0;
+            box-shadow: none;
         }
     }
 
     &--inverse{
         background: $colour-yellow;
         color: $black;
+        box-shadow: 0 0 0 $black;
         &:after{
             background-image: url('./static/arrow-black.svg');
         }
         &:hover{
             color: $black;
+            // yellow on a yellow button would be invisible
+            box-shadow: 8px 8px 0 $black;
         }
     }
 
